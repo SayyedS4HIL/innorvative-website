@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- ================= SEO ================= -->
+    <title>
+      Our Projects | Software, Web & Mobile App Development Company – Innorvia
+      Technology
+    </title>
+
+    <meta
+      name="description"
+      content="Explore real software development, web development, and mobile app development projects delivered by Innorvia Technology. Trusted software company for scalable digital solutions."
+    />
+
+    <meta
+      name="keywords"
+      content="software development company, web developer, mobile app developer, custom software projects, Innorvia Technology"
+    />
+
+    <link rel="canonical" href="https://innorviatechnology.com/projects.html" />
+
+    <!-- ================= HOME PAGE CSS (FOR NAVBAR) ================= -->
+    <link
+      href="assets/vendor/bootstrap/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="assets/vendor/bootstrap-icons/bootstrap-icons.css"
+      rel="stylesheet"
+    />
+    <!-- Bootstrap CSS -->
+    <link
+      href="assets/vendor/bootstrap/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="assets/vendor/bootstrap-icons/bootstrap-icons.css"
+      rel="stylesheet"
+    />
+
+    <!-- Bootstrap JS (REQUIRED for carousel) -->
+    <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <link href="assets/css/main.css" rel="stylesheet" />
+
+    <!-- ================= Tailwind ================= -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              brand: "#0EA5E9",
+              brandLight: "#E0F2FE",
+              brandDark: "#0284C7",
+            },
+          },
+        },
+      };
+    </script>
+
+    <!-- Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@500;600&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      body {
+        font-family: "Inter", sans-serif;
+      }
+      h1,
+      h2,
+      h3 {
+        font-family: "Playfair Display", serif;
+      }
+
+      /* scroll reveal */
+      .reveal {
+        opacity: 0;
+        transform: translateY(40px) scale(0.96);
+        transition: all 0.8s ease;
+      }
+      .reveal.active {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+      }
+
+      /* project card */
+      .project-card {
+        position: relative;
+        overflow: hidden;
+        transition: all 0.4s ease;
+      }
+      .project-card:hover {
+        transform: translateY(-12px) scale(1.03);
+        box-shadow: 0 25px 45px rgba(14, 165, 233, 0.25);
+      }
+      .project-card::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 4px;
+        background: linear-gradient(90deg, #0ea5e9, #38bdf8);
+        opacity: 0;
+        transition: opacity 0.4s ease;
+      }
+      .project-card:hover::before {
+        opacity: 1;
+      }
+      /* Testimonials */
+      .testimonial-card {
+        background: white;
+        border-radius: 16px;
+        transition: all 0.4s ease;
+      }
+
+      .testimonial-card:hover {
+        transform: translateY(-10px) scale(1.02);
+        box-shadow: 0 20px 40px rgba(14, 165, 233, 0.25);
+      }
+
+      /* carousel controls visibility */
+      .carousel-control-prev-icon,
+      .carousel-control-next-icon {
+        filter: invert(1);
+      }
+    </style>
+  </head>
+
+  <body class="bg-white text-slate-800">
+    <!-- ================= NAVBAR (SAME AS HOME) ================= -->
+    <header id="header" class="header d-flex align-items-center fixed-top">
+      <div
+        class="header-container container-fluid container-xl position-relative d-flex align-items-center justify-content-between"
+      >
+        <a
+          href="index.html"
+          class="logo d-flex align-items-center me-auto me-xl-0"
+        >
+          <h1 class="sitename">Innorvia Technology</h1>
+        </a>
+
+        <nav id="navmenu" class="navmenu">
+          <ul>
+            <li><a href="index.html#hero">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="projects.html" class="active">Projects</a></li>
+            <li><a href="index.html#services">Services</a></li>
+            <li><a href="index.html#team">Team</a></li>
+          </ul>
+          <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+        </nav>
+
+        <a class="btn-getstarted" href="index.html#contact">Contact</a>
+      </div>
+    </header>
+
+    <!-- spacing -->
+    <div style="margin-top: 110px"></div>
+
+    <!-- ================= HERO ================= -->
+    <section class="bg-gradient-to-br from-brandDark to-brand py-24 text-white">
+      <div class="max-w-6xl mx-auto px-6 text-center reveal">
+        <h1 class="text-4xl md:text-5xl font-semibold mb-4">Our Projects</h1>
+        <p class="max-w-3xl mx-auto text-sky-100 text-lg">
+          Real software, web, and mobile app development projects delivered for
+          businesses.
+        </p>
+      </div>
+    </section>
+
+    <!-- ================= SEO INTRO ================= -->
+    <section class="max-w-6xl mx-auto px-6 py-16 reveal">
+      <h2 class="text-3xl font-semibold mb-4 text-brandDark">
+        Software, Web & Mobile App Development Portfolio
+      </h2>
+      <p class="text-slate-600 leading-relaxed">
+        Innorvia Technology is a software development company delivering
+        scalable web development, mobile app development, and custom software
+        solutions. Below are some of our successfully completed real-world
+        projects.
+      </p>
+    </section>
+
+    <!-- ================= PROJECTS GRID (ALL 6) ================= -->
+    <section class="max-w-6xl mx-auto px-6 pb-20">
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+        <!-- 1 -->
+        <div class="project-card bg-white border rounded-xl p-6 reveal">
+          <h3 class="text-xl font-semibold mb-2">E-Commerce Web Platform</h3>
+          <p class="text-slate-600 text-sm mb-3">
+            Full-featured e-commerce platform with secure payments, admin panel,
+            and order management.
+          </p>
+          <span class="text-xs text-brand font-medium">
+            Web Development • React • Node.js
+          </span>
+        </div>
+
+        <!-- 2 -->
+        <div class="project-card bg-white border rounded-xl p-6 reveal">
+          <h3 class="text-xl font-semibold mb-2">Android Mobile Application</h3>
+          <p class="text-slate-600 text-sm mb-3">
+            Android app with booking system, notifications, and real-time user
+            management.
+          </p>
+          <span class="text-xs text-brand font-medium">
+            Mobile App Development • Android
+          </span>
+        </div>
+
+        <!-- 3 -->
+        <div class="project-card bg-white border rounded-xl p-6 reveal">
+          <h3 class="text-xl font-semibold mb-2">
+            Billing & Inventory Software
+          </h3>
+          <p class="text-slate-600 text-sm mb-3">
+            Desktop billing and inventory management system for small
+            businesses.
+          </p>
+          <span class="text-xs text-brand font-medium">
+            Custom Software • Java • MySQL
+          </span>
+        </div>
+
+        <!-- 4 -->
+        <div class="project-card bg-white border rounded-xl p-6 reveal">
+          <h3 class="text-xl font-semibold mb-2">Business Portfolio Website</h3>
+          <p class="text-slate-600 text-sm mb-3">
+            SEO-optimized corporate website built for brand growth and lead
+            generation.
+          </p>
+          <span class="text-xs text-brand font-medium">
+            Web Development • UI/UX
+          </span>
+        </div>
+
+        <!-- 5 -->
+        <div class="project-card bg-white border rounded-xl p-6 reveal">
+          <h3 class="text-xl font-semibold mb-2">Custom CRM System</h3>
+          <p class="text-slate-600 text-sm mb-3">
+            CRM software to manage leads, customers, follow-ups, and workflows.
+          </p>
+          <span class="text-xs text-brand font-medium">
+            Software Development • PHP • MySQL
+          </span>
+        </div>
+
+        <!-- 6 -->
+        <div class="project-card bg-white border rounded-xl p-6 reveal">
+          <h3 class="text-xl font-semibold mb-2">
+            Society Management Application
+          </h3>
+          <p class="text-slate-600 text-sm mb-3">
+            Web and mobile solution for society communication, billing, and
+            payments.
+          </p>
+          <span class="text-xs text-brand font-medium">
+            Web & Mobile App Development
+          </span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= TESTIMONIALS ================= -->
+    <section class="bg-brandLight py-20">
+      <div class="max-w-6xl mx-auto px-6">
+        <h2
+          class="text-3xl font-semibold text-center mb-12 text-brandDark reveal"
+        >
+          What Our Clients Say
+        </h2>
+
+        <div
+          id="testimonialCarousel"
+          class="carousel slide reveal"
+          data-bs-ride="carousel"
+          data-bs-interval="2000"
+        >
+          <div class="carousel-inner">
+            <!-- SLIDE 1 -->
+            <div class="carousel-item active">
+              <div class="row g-4 justify-content-center">
+                <div class="col-lg-6">
+                  <div class="card testimonial-card h-100 border-0 p-3">
+                    <div class="card-body">
+                      <h5 class="card-title">Adnan Shaikh</h5>
+                      <p class="text-primary fw-semibold mb-1">Mobile App</p>
+                      <div class="mb-2">⭐⭐⭐⭐⭐</div>
+                      <p class="card-text text-muted">
+                        Algo7111 has completely changed the way I trade. The
+                        automation, broker integration, and real-time alerts are
+                        extremely accurate.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-lg-6">
+                  <div class="card testimonial-card h-100 border-0 p-3">
+                    <div class="card-body">
+                      <h5 class="card-title">Amir Ahmad</h5>
+                      <p class="text-primary fw-semibold mb-1">
+                        Founder – Dua Hub
+                      </p>
+                      <div class="mb-2">⭐⭐⭐⭐⭐</div>
+                      <p class="card-text text-muted">
+                        Clean UI, smooth communication, and excellent delivery.
+                        The team exceeded expectations.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- SLIDE 2 -->
+            <div class="carousel-item">
+              <div class="row g-4 justify-content-center">
+                <div class="col-lg-6">
+                  <div class="card testimonial-card h-100 border-0 p-3">
+                    <div class="card-body">
+                      <h5 class="card-title">A to Z Collection</h5>
+                      <p class="text-primary fw-semibold mb-1">
+                        E-Commerce Owner
+                      </p>
+                      <div class="mb-2">⭐⭐⭐⭐</div>
+                      <p class="card-text text-muted">
+                        Our online store is fast, smooth, and visually
+                        appealing. Checkout works perfectly.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-lg-6">
+                  <div class="card testimonial-card h-100 border-0 p-3">
+                    <div class="card-body">
+                      <h5 class="card-title">Arun Shelke</h5>
+                      <p class="text-primary fw-semibold mb-1">
+                        Restaurant System
+                      </p>
+                      <div class="mb-2">⭐⭐⭐</div>
+                      <p class="card-text text-muted">
+                        Billing and order handling became very smooth. Easy for
+                        staff to use.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- SLIDE 3 -->
+            <div class="carousel-item">
+              <div class="row g-4 justify-content-center">
+                <div class="col-lg-6">
+                  <div class="card testimonial-card h-100 border-0 p-3">
+                    <div class="card-body">
+                      <h5 class="card-title">Alcon Royse</h5>
+                      <p class="text-primary fw-semibold mb-1">
+                        Society Management
+                      </p>
+                      <div class="mb-2">⭐⭐⭐⭐⭐</div>
+                      <p class="card-text text-muted">
+                        Automated billing and reports saved us a lot of time.
+                        Very stable system.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-lg-6">
+                  <div class="card testimonial-card h-100 border-0 p-3">
+                    <div class="card-body">
+                      <h5 class="card-title">Scalpus Technology</h5>
+                      <p class="text-primary fw-semibold mb-1">
+                        Fantasy Gaming App
+                      </p>
+                      <div class="mb-2">⭐⭐⭐⭐</div>
+                      <p class="card-text text-muted">
+                        Excellent gaming app with smooth performance and secure
+                        wallet system.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Controls -->
+          <button
+            class="carousel-control-prev"
+            type="button"
+            data-bs-target="#testimonialCarousel"
+            data-bs-slide="prev"
+          >
+            <span class="carousel-control-prev-icon"></span>
+          </button>
+
+          <button
+            class="carousel-control-next"
+            type="button"
+            data-bs-target="#testimonialCarousel"
+            data-bs-slide="next"
+          >
+            <span class="carousel-control-next-icon"></span>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= CTA ================= -->
+    <section class="bg-gradient-to-r from-brand to-brandDark text-white">
+      <div class="max-w-6xl mx-auto px-6 py-20 text-center reveal">
+        <h2 class="text-3xl font-semibold mb-4">
+          Need a Software, Web, or Mobile App Developer?
+        </h2>
+        <p class="text-sky-100 mb-6">
+          Let’s build a powerful digital solution for your business.
+        </p>
+        <a
+          href="index.html#contact"
+          class="inline-block bg-white text-brand px-10 py-3 rounded-full font-medium hover:bg-sky-50 transition"
+        >
+          Get a Free Quote
+        </a>
+      </div>
+    </section>
+
+    <footer class="border-t text-center py-6 text-sm text-slate-500">
+      © 2026 Innorvia Technology. All rights reserved.
+    </footer>
+
+    <!-- ================= JS ================= -->
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const toggle = document.querySelector(".mobile-nav-toggle");
+        const nav = document.querySelector("#navmenu");
+
+        toggle.addEventListener("click", () => {
+          nav.classList.toggle("mobile-nav-active");
+          toggle.classList.toggle("bi-list");
+          toggle.classList.toggle("bi-x");
+        });
+
+        const reveals = document.querySelectorAll(".reveal");
+        const observer = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) entry.target.classList.add("active");
+            });
+          },
+          { threshold: 0.15 }
+        );
+
+        reveals.forEach((el) => observer.observe(el));
+      });
+    </script>
+  </body>
+</html>

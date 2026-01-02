@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>
+      Software Development Company | Web & Mobile App Developers – Innorvia
+      Technology
+    </title>
+
+    <!-- SEO -->
+    <meta
+      name="description"
+      content="Innorvia Technology is a software development company offering web development, mobile app development, and custom software solutions for startups and businesses in India."
+    />
+
+    <!-- ================= HOME PAGE CSS (REQUIRED FOR NAVBAR) ================= -->
+    <link
+      href="assets/vendor/bootstrap/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="assets/vendor/bootstrap-icons/bootstrap-icons.css"
+      rel="stylesheet"
+    />
+    <link href="assets/css/main.css" rel="stylesheet" />
+
+    <!-- ================= TAILWIND ================= -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              brand: "#0EA5E9",
+              brandLight: "#E0F2FE",
+              brandDark: "#0284C7",
+            },
+          },
+        },
+      };
+    </script>
+
+    <!-- Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@500;600&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      body {
+        font-family: "Inter", sans-serif;
+      }
+      h1,
+      h2,
+      h3 {
+        font-family: "Playfair Display", serif;
+      }
+
+      /* Scroll pop animation */
+      .reveal {
+        opacity: 0;
+        transform: translateY(40px) scale(0.96);
+        transition: all 0.8s ease;
+      }
+      .reveal.active {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+      }
+      .process-card {
+        transition: all 0.4s ease;
+      }
+
+      .process-card:hover {
+        transform: translateY(-10px) scale(1.03);
+        box-shadow: 0 20px 40px rgba(14, 165, 233, 0.25);
+      }
+      .mvv-card {
+        transition: all 0.4s ease;
+        position: relative;
+        overflow: hidden;
+      }
+
+      /* soft top accent */
+      .mvv-card::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 4px;
+        width: 100%;
+        background: linear-gradient(90deg, #0ea5e9, #38bdf8);
+        opacity: 0;
+        transition: opacity 0.4s ease;
+      }
+
+      .mvv-card:hover::before {
+        opacity: 1;
+      }
+
+      /* lift + glow */
+      .mvv-card:hover {
+        transform: translateY(-10px) scale(1.03);
+        box-shadow: 0 20px 40px rgba(14, 165, 233, 0.25);
+      }
+      .service-card {
+        position: relative;
+        overflow: hidden;
+        transition: all 0.4s ease;
+      }
+
+      /* top gradient accent */
+      .service-card::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 4px;
+        background: linear-gradient(90deg, #0ea5e9, #38bdf8);
+        opacity: 0;
+        transition: opacity 0.4s ease;
+      }
+
+      .service-card:hover::before {
+        opacity: 1;
+      }
+
+      /* lift + glow */
+      .service-card:hover {
+        transform: translateY(-12px) scale(1.03);
+        box-shadow: 0 25px 45px rgba(14, 165, 233, 0.25);
+      }
+
+      /* icon animation */
+      .service-icon {
+        transition: transform 0.4s ease, background 0.4s ease;
+      }
+
+      .service-card:hover .service-icon {
+        transform: scale(1.15) rotate(3deg);
+        background: linear-gradient(135deg, #0ea5e9, #38bdf8);
+      }
+    </style>
+  </head>
+
+  <body class="bg-white text-slate-800">
+    <!-- ================= NAVBAR (SAME AS HOME PAGE) ================= -->
+    <header id="header" class="header d-flex align-items-center fixed-top">
+      <div
+        class="header-container container-fluid container-xl position-relative d-flex align-items-center justify-content-between"
+      >
+        <a
+          href="index.html"
+          class="logo d-flex align-items-center me-auto me-xl-0"
+        >
+          <h1 class="sitename">Innorvia Technology</h1>
+        </a>
+
+        <nav id="navmenu" class="navmenu">
+          <ul>
+            <li><a href="index.html#hero">Home</a></li>
+            <li><a href="about.html" class="active">About</a></li>
+            <li><a href="projects.html">Projects</a></li>
+            <li><a href="index.html#services">Services</a></li>
+            <li><a href="index.html#team">Team</a></li>
+          </ul>
+          <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+        </nav>
+
+        <a class="btn-getstarted" href="index.html#contact">Contact</a>
+      </div>
+    </header>
+    <!-- ================= END NAVBAR ================= -->
+
+    <!-- spacing because header is fixed -->
+    <div style="margin-top: 110px"></div>
+
+    <!-- HERO -->
+    <section class="bg-gradient-to-br from-brandDark to-brand py-24 text-white">
+      <div class="max-w-6xl mx-auto px-6 text-center reveal">
+        <h1 class="text-4xl md:text-5xl font-semibold mb-4">
+          About Innorvia Technology
+        </h1>
+        <p class="max-w-3xl mx-auto text-sky-100 text-lg">
+          Building modern, scalable, and secure digital solutions that empower
+          businesses worldwide.
+        </p>
+      </div>
+    </section>
+
+    <!-- WHO WE ARE -->
+    <section class="max-w-6xl mx-auto px-6 py-20 reveal">
+      <div class="grid md:grid-cols-2 gap-12 items-center">
+        <div>
+          <h2 class="text-3xl font-semibold mb-4 text-brandDark">Who We Are</h2>
+          <p class="text-slate-600 mb-4">
+            Innorvia Technology is a technology-driven software development
+            company delivering high-performance digital products.
+          </p>
+          <p class="text-slate-600">
+            We specialize in web applications, mobile apps, and custom software.
+          </p>
+        </div>
+
+        <div class="bg-brandLight rounded-xl p-8 shadow-md">
+          <ul class="space-y-4 font-medium">
+            <li>✔ 50+ Projects Delivered</li>
+            <li>✔ 40+ Happy Clients</li>
+            <li>✔ 5+ Years Experience</li>
+            <li>✔ End-to-End Development</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+    <!-- WHAT WE DO -->
+    <section class="max-w-6xl mx-auto px-6 py-20 reveal">
+      <h2 class="text-3xl font-semibold mb-6 text-brandDark">What We Do</h2>
+
+      <p class="text-slate-600 leading-relaxed mb-6">
+        Innorvia Technology is a full-service software development company
+        offering web development, mobile app development, and custom software
+        solutions. We help startups, small businesses, and enterprises build
+        reliable and scalable digital products.
+      </p>
+
+      <p class="text-slate-600 leading-relaxed">
+        Our team of experienced web developers and mobile app developers focuses
+        on performance, security, and modern user experience while delivering
+        solutions that align with real business goals.
+      </p>
+    </section>
+    <!-- OUR SERVICES -->
+    <section class="bg-brandLight py-20">
+      <div class="max-w-6xl mx-auto px-6">
+        <h2
+          class="text-3xl font-semibold text-center mb-12 text-brandDark reveal"
+        >
+          Our Services
+        </h2>
+
+        <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div
+            class="service-card bg-white p-8 rounded-xl shadow reveal text-center"
+          >
+            <div
+              class="service-icon w-14 h-14 mx-auto mb-4 rounded-full bg-brand text-white flex items-center justify-center text-2xl"
+            >
+              🌐
+            </div>
+            <h3 class="text-xl font-semibold mb-2 text-brand">
+              Web Development
+            </h3>
+            <p class="text-slate-600">
+              Responsive, SEO-friendly websites and web applications built with
+              modern technologies for speed and scalability.
+            </p>
+          </div>
+
+          <div
+            class="service-card bg-white p-8 rounded-xl shadow reveal text-center"
+          >
+            <div
+              class="service-icon w-14 h-14 mx-auto mb-4 rounded-full bg-brand text-white flex items-center justify-center text-2xl"
+            >
+              📱
+            </div>
+            <h3 class="text-xl font-semibold mb-2 text-brand">
+              Mobile App Development
+            </h3>
+            <p class="text-slate-600">
+              Android and cross-platform mobile apps designed for performance,
+              security, and smooth user experience.
+            </p>
+          </div>
+
+          <div
+            class="service-card bg-white p-8 rounded-xl shadow reveal text-center"
+          >
+            <div
+              class="service-icon w-14 h-14 mx-auto mb-4 rounded-full bg-brand text-white flex items-center justify-center text-2xl"
+            >
+              ⚙️
+            </div>
+            <h3 class="text-xl font-semibold mb-2 text-brand">
+              Custom Software Development
+            </h3>
+            <p class="text-slate-600">
+              Tailor-made software solutions that automate workflows and support
+              long-term business growth.
+            </p>
+          </div>
+
+          <div
+            class="service-card bg-white p-8 rounded-xl shadow reveal text-center"
+          >
+            <div
+              class="service-icon w-14 h-14 mx-auto mb-4 rounded-full bg-brand text-white flex items-center justify-center text-2xl"
+            >
+              🎨
+            </div>
+            <h3 class="text-xl font-semibold mb-2 text-brand">
+              UI / UX Design
+            </h3>
+            <p class="text-slate-600">
+              Clean, modern, and user-centric designs that improve engagement
+              and conversions.
+            </p>
+          </div>
+
+          <div
+            class="service-card bg-white p-8 rounded-xl shadow reveal text-center"
+          >
+            <div
+              class="service-icon w-14 h-14 mx-auto mb-4 rounded-full bg-brand text-white flex items-center justify-center text-2xl"
+            >
+              🔧
+            </div>
+            <h3 class="text-xl font-semibold mb-2 text-brand">
+              Maintenance & Support
+            </h3>
+            <p class="text-slate-600">
+              Continuous support, updates, and performance optimization after
+              project delivery.
+            </p>
+          </div>
+
+          <div
+            class="service-card bg-white p-8 rounded-xl shadow reveal text-center"
+          >
+            <div
+              class="service-icon w-14 h-14 mx-auto mb-4 rounded-full bg-brand text-white flex items-center justify-center text-2xl"
+            >
+              💼
+            </div>
+            <h3 class="text-xl font-semibold mb-2 text-brand">
+              Business Consulting
+            </h3>
+            <p class="text-slate-600">
+              Technical consulting to help businesses choose the right
+              architecture and technology stack.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- OUR PROCESS -->
+    <!-- OUR PROCESS -->
+    <section class="max-w-6xl mx-auto px-6 py-20 reveal">
+      <h2 class="text-3xl font-semibold mb-12 text-center text-brandDark">
+        Our Development Process
+      </h2>
+
+      <div class="grid md:grid-cols-4 gap-8 text-center">
+        <div class="process-card bg-white p-6 rounded-xl shadow reveal">
+          <h3 class="font-semibold text-brand mb-2">1. Requirement Analysis</h3>
+          <p class="text-slate-600 text-sm">
+            Understanding your business goals and technical needs.
+          </p>
+        </div>
+
+        <div class="process-card bg-white p-6 rounded-xl shadow reveal">
+          <h3 class="font-semibold text-brand mb-2">2. Design & Planning</h3>
+          <p class="text-slate-600 text-sm">
+            UI/UX design and system architecture planning.
+          </p>
+        </div>
+
+        <div class="process-card bg-white p-6 rounded-xl shadow reveal">
+          <h3 class="font-semibold text-brand mb-2">3. Development</h3>
+          <p class="text-slate-600 text-sm">
+            Agile development with regular updates and testing.
+          </p>
+        </div>
+
+        <div class="process-card bg-white p-6 rounded-xl shadow reveal">
+          <h3 class="font-semibold text-brand mb-2">4. Launch & Support</h3>
+          <p class="text-slate-600 text-sm">
+            Deployment, monitoring, and long-term support.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- MISSION / VISION / VALUES -->
+    <section class="bg-brandLight py-20">
+      <div class="max-w-6xl mx-auto px-6 grid md:grid-cols-3 gap-8 text-center">
+        <div class="mvv-card bg-white p-8 rounded-xl shadow reveal">
+          <div
+            class="w-12 h-12 mx-auto mb-4 rounded-full bg-brand text-white flex items-center justify-center text-xl font-semibold"
+          >
+            🎯
+          </div>
+          <h3 class="text-xl font-semibold text-brand mb-2">Our Mission</h3>
+          <p class="text-slate-600">
+            Deliver scalable, reliable, and high-quality software solutions that
+            help businesses grow.
+          </p>
+        </div>
+
+        <div class="mvv-card bg-white p-8 rounded-xl shadow reveal">
+          <div
+            class="w-12 h-12 mx-auto mb-4 rounded-full bg-brand text-white flex items-center justify-center text-xl font-semibold"
+          >
+            🌍
+          </div>
+          <h3 class="text-xl font-semibold text-brand mb-2">Our Vision</h3>
+          <p class="text-slate-600">
+            To become a trusted global technology partner known for innovation
+            and excellence.
+          </p>
+        </div>
+
+        <div class="mvv-card bg-white p-8 rounded-xl shadow reveal">
+          <div
+            class="w-12 h-12 mx-auto mb-4 rounded-full bg-brand text-white flex items-center justify-center text-xl font-semibold"
+          >
+            💡
+          </div>
+          <h3 class="text-xl font-semibold text-brand mb-2">Our Values</h3>
+          <p class="text-slate-600">
+            Innovation, quality, transparency, and long-term client success.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="bg-gradient-to-r from-brand to-brandDark text-white">
+      <div class="max-w-6xl mx-auto px-6 py-20 text-center reveal">
+        <h2 class="text-3xl font-semibold mb-4">
+          Have an idea? Let’s build it together.
+        </h2>
+        <a
+          href="index.html#contact"
+          class="inline-block bg-white text-brand px-10 py-3 rounded-full font-medium hover:bg-sky-50 transition"
+        >
+          Start a Project
+        </a>
+      </div>
+    </section>
+
+    <footer class="border-t text-center py-6 text-sm text-slate-500">
+      © 2026 Innorvia Technology. All rights reserved.
+    </footer>
+
+    <!-- ================= NAVBAR JS (HOME STYLE) ================= -->
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const mobileToggle = document.querySelector(".mobile-nav-toggle");
+        const navmenu = document.querySelector("#navmenu");
+
+        mobileToggle.addEventListener("click", () => {
+          navmenu.classList.toggle("mobile-nav-active");
+          mobileToggle.classList.toggle("bi-list");
+          mobileToggle.classList.toggle("bi-x");
+        });
+      });
+
+      // Scroll reveal
+      const reveals = document.querySelectorAll(".reveal");
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("active");
+            }
+          });
+        },
+        { threshold: 0.15 }
+      );
+      reveals.forEach((el) => observer.observe(el));
+    </script>
+  </body>
+</html>
