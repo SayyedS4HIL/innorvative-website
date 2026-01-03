@@ -443,13 +443,13 @@
     <!-- ================= JS ================= -->
     <script>
       document.addEventListener("DOMContentLoaded", () => {
-        const toggle = document.querySelector(".mobile-nav-toggle");
-        const nav = document.querySelector("#navmenu");
+        const mobileToggle = document.querySelector(".mobile-nav-toggle");
+        const body = document.body;
 
-        toggle.addEventListener("click", () => {
-          nav.classList.toggle("mobile-nav-active");
-          toggle.classList.toggle("bi-list");
-          toggle.classList.toggle("bi-x");
+        mobileToggle.addEventListener("click", () => {
+          body.classList.toggle("mobile-nav-active"); // ✅ CORRECT
+          mobileToggle.classList.toggle("bi-list");
+          mobileToggle.classList.toggle("bi-x");
         });
 
         const reveals = document.querySelectorAll(".reveal");

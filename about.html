@@ -451,10 +451,10 @@
     <script>
       document.addEventListener("DOMContentLoaded", () => {
         const mobileToggle = document.querySelector(".mobile-nav-toggle");
-        const navmenu = document.querySelector("#navmenu");
+        const body = document.body;
 
         mobileToggle.addEventListener("click", () => {
-          navmenu.classList.toggle("mobile-nav-active");
+          body.classList.toggle("mobile-nav-active"); // ✅ CORRECT
           mobileToggle.classList.toggle("bi-list");
           mobileToggle.classList.toggle("bi-x");
         });
