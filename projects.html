@@ -68,6 +68,10 @@
       href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@500;600&display=swap"
       rel="stylesheet"
     />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css"
+    />
 
     <style>
       body {
@@ -131,6 +135,213 @@
       .carousel-control-next-icon {
         filter: invert(1);
       }
+      .scroll-top {
+        position: fixed;
+        right: 20px;
+        bottom: 20px;
+        width: 45px;
+        height: 45px;
+        background: #0d6efd;
+        color: #fff;
+        border-radius: 50%;
+        font-size: 28px;
+        cursor: pointer;
+        z-index: 9999;
+        opacity: 0;
+        visibility: hidden;
+        transition: all 0.3s ease;
+      }
+
+      .scroll-top.active {
+        opacity: 1;
+        visibility: visible;
+      } /* ===== PROJECT CARD UPGRADE ===== */
+      .project-card {
+        background: #ffffff;
+        border-radius: 16px;
+        transition: transform 0.35s ease, box-shadow 0.35s ease;
+        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+      }
+
+      /* Hover lift */
+      .project-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 22px 50px rgba(0, 0, 0, 0.12);
+      }
+
+      /* Title micro motion */
+      .project-card h5 {
+        transition: transform 0.3s ease;
+      }
+
+      .project-card:hover h5 {
+        transform: translateX(4px);
+      }
+
+      /* Smooth reveal animation */
+      .reveal {
+        opacity: 0;
+        transform: translateY(40px);
+        transition: all 0.9s cubic-bezier(0.22, 1, 0.36, 1);
+      }
+
+      .reveal.active {
+        opacity: 1;
+        transform: translateY(0);
+      }
+      .project-card .btn {
+        transition: all 0.3s ease;
+      }
+
+      .project-card:hover .btn {
+        transform: translateY(-2px);
+      }
+      /* Hero underline animation */
+      .reveal-line {
+        transform: scaleX(0);
+        transform-origin: center;
+        transition: transform 0.8s ease;
+      }
+
+      .reveal-scale.active .reveal-line {
+        transform: scaleX(1);
+      }
+    </style>
+    <style>
+      /* === STRONG REVEAL ANIMATIONS === */
+      .reveal-up {
+        opacity: 0;
+        transform: translateY(60px);
+        transition: all 1s cubic-bezier(0.22, 1, 0.36, 1);
+      }
+
+      .reveal-left {
+        opacity: 0;
+        transform: translateX(-80px);
+        transition: all 1s cubic-bezier(0.22, 1, 0.36, 1);
+      }
+
+      .reveal-right {
+        opacity: 0;
+        transform: translateX(80px);
+        transition: all 1s cubic-bezier(0.22, 1, 0.36, 1);
+      }
+
+      .reveal-up.active,
+      .reveal-left.active,
+      .reveal-right.active {
+        opacity: 1;
+        transform: translate(0, 0);
+      }
+
+      /* === HERO UNDERLINE DRAW === */
+      .draw-line {
+        width: 0;
+        height: 4px;
+        background: rgba(255, 255, 255, 0.8);
+        margin: 0 auto;
+        transition: width 1s ease;
+      }
+
+      .draw-line.active {
+        width: 90px;
+      }
+
+      /* === HERO BACKGROUND MOTION === */
+      .hero-bg {
+        background-size: 140% 140%;
+        animation: bgMove 12s ease infinite;
+      }
+
+      @keyframes bgMove {
+        0% {
+          background-position: 0% 50%;
+        }
+        50% {
+          background-position: 100% 50%;
+        }
+        100% {
+          background-position: 0% 50%;
+        }
+      }
+    </style>
+
+    <style>
+      .project-card img {
+        max-width: 100%;
+        object-fit: cover;
+      }
+
+      /* Ensure cards stay equal height */
+      .project-card {
+        height: 100%;
+      }
+
+      /* Modal images responsive */
+      .modal-body img {
+        width: 100%;
+        height: auto;
+        object-fit: cover;
+      }
+      .project-main-img {
+        width: 100%;
+        height: auto; /* image keeps natural height */
+        object-fit: contain;
+      }
+      .project-card {
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+      }
+
+      .project-main-img {
+        width: 100%;
+        max-height: 240px; /* optional limit */
+        object-fit: contain;
+      }
+      .project-main-img {
+        width: 100%;
+        height: 240px;
+        object-fit: contain;
+        background: #f2f2f2; /* adds clean space */
+        padding: 6px;
+      }
+      /* Project card hover effect */
+      .project-card {
+        transition: all 0.3s ease;
+        border-radius: 14px;
+        background: #ffffff;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+      }
+
+      .project-card:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 10px 24px rgba(0, 0, 0, 0.15);
+        cursor: pointer;
+      }
+
+      /* Animate image slightly */
+      .project-card img {
+        transition: all 0.3s ease;
+      }
+
+      .project-card:hover img {
+        transform: scale(1.03);
+      }
+      .project-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 12px 28px rgba(0, 150, 255, 0.25);
+      }
+      .reveal {
+        opacity: 0;
+        transform: translateY(40px);
+        transition: all 0.7s ease;
+      }
+
+      .reveal.active {
+        opacity: 1;
+        transform: translateY(0px);
+      }
     </style>
   </head>
 
@@ -166,108 +377,558 @@
     <div style="margin-top: 110px"></div>
 
     <!-- ================= HERO ================= -->
-    <section class="bg-gradient-to-br from-brandDark to-brand py-24 text-white">
-      <div class="max-w-6xl mx-auto px-6 text-center reveal">
-        <h1 class="text-4xl md:text-5xl font-semibold mb-4">Our Projects</h1>
-        <p class="max-w-3xl mx-auto text-sky-100 text-lg">
+    <!-- ================= HERO ================= -->
+    <!-- ================= HERO ================= -->
+    <section
+      class="hero-bg bg-gradient-to-br from-brandDark to-brand py-32 text-white overflow-hidden"
+    >
+      <div class="max-w-6xl mx-auto px-6 text-center">
+        <h1 class="text-4xl md:text-5xl font-semibold mb-6 reveal-up">
+          Our Projects
+        </h1>
+
+        <div class="draw-line mb-6"></div>
+
+        <p
+          class="max-w-3xl mx-auto text-sky-100 text-lg reveal-up"
+          style="transition-delay: 0.15s"
+        >
           Real software, web, and mobile app development projects delivered for
-          businesses.
+          businesses across multiple industries.
         </p>
       </div>
     </section>
 
     <!-- ================= SEO INTRO ================= -->
-    <section class="max-w-6xl mx-auto px-6 py-16 reveal">
-      <h2 class="text-3xl font-semibold mb-4 text-brandDark">
-        Software, Web & Mobile App Development Portfolio
-      </h2>
-      <p class="text-slate-600 leading-relaxed">
-        Innorvia Technology is a software development company delivering
-        scalable web development, mobile app development, and custom software
-        solutions. Below are some of our successfully completed real-world
-        projects.
-      </p>
-    </section>
-
-    <!-- ================= PROJECTS GRID (ALL 6) ================= -->
-    <section class="max-w-6xl mx-auto px-6 pb-20">
-      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
-        <!-- 1 -->
-        <div class="project-card bg-white border rounded-xl p-6 reveal">
-          <h3 class="text-xl font-semibold mb-2">E-Commerce Web Platform</h3>
-          <p class="text-slate-600 text-sm mb-3">
-            Full-featured e-commerce platform with secure payments, admin panel,
-            and order management.
-          </p>
-          <span class="text-xs text-brand font-medium">
-            Web Development • React • Node.js
-          </span>
+    <!-- ================= SEO INTRO ================= -->
+    <section class="max-w-6xl mx-auto px-6 py-24">
+      <div class="grid md:grid-cols-2 gap-16 items-start">
+        <!-- Left -->
+        <div class="reveal-left">
+          <h2 class="text-3xl font-semibold text-brandDark leading-snug">
+            Software, Web &<br />
+            Mobile App<br />
+            Development Portfolio
+          </h2>
         </div>
 
-        <!-- 2 -->
-        <div class="project-card bg-white border rounded-xl p-6 reveal">
-          <h3 class="text-xl font-semibold mb-2">Android Mobile Application</h3>
-          <p class="text-slate-600 text-sm mb-3">
-            Android app with booking system, notifications, and real-time user
-            management.
+        <!-- Right -->
+        <div class="reveal-right">
+          <p class="text-slate-600 leading-relaxed text-lg mb-6">
+            <strong>Innorvia Technology</strong> is a software development
+            company delivering scalable web development, mobile app development,
+            and custom software solutions.
           </p>
-          <span class="text-xs text-brand font-medium">
-            Mobile App Development • Android
-          </span>
-        </div>
 
-        <!-- 3 -->
-        <div class="project-card bg-white border rounded-xl p-6 reveal">
-          <h3 class="text-xl font-semibold mb-2">
-            Billing & Inventory Software
-          </h3>
-          <p class="text-slate-600 text-sm mb-3">
-            Desktop billing and inventory management system for small
-            businesses.
+          <p class="text-slate-600 leading-relaxed">
+            Below are real-world projects showcasing clean architecture, modern
+            UI, and performance-focused engineering.
           </p>
-          <span class="text-xs text-brand font-medium">
-            Custom Software • Java • MySQL
-          </span>
-        </div>
-
-        <!-- 4 -->
-        <div class="project-card bg-white border rounded-xl p-6 reveal">
-          <h3 class="text-xl font-semibold mb-2">Business Portfolio Website</h3>
-          <p class="text-slate-600 text-sm mb-3">
-            SEO-optimized corporate website built for brand growth and lead
-            generation.
-          </p>
-          <span class="text-xs text-brand font-medium">
-            Web Development • UI/UX
-          </span>
-        </div>
-
-        <!-- 5 -->
-        <div class="project-card bg-white border rounded-xl p-6 reveal">
-          <h3 class="text-xl font-semibold mb-2">Custom CRM System</h3>
-          <p class="text-slate-600 text-sm mb-3">
-            CRM software to manage leads, customers, follow-ups, and workflows.
-          </p>
-          <span class="text-xs text-brand font-medium">
-            Software Development • PHP • MySQL
-          </span>
-        </div>
-
-        <!-- 6 -->
-        <div class="project-card bg-white border rounded-xl p-6 reveal">
-          <h3 class="text-xl font-semibold mb-2">
-            Society Management Application
-          </h3>
-          <p class="text-slate-600 text-sm mb-3">
-            Web and mobile solution for society communication, billing, and
-            payments.
-          </p>
-          <span class="text-xs text-brand font-medium">
-            Web & Mobile App Development
-          </span>
         </div>
       </div>
     </section>
+
+    <!--  -->
+
+    <section id="projects" class="section bg-light border-top">
+      <div class="container">
+        <!-- Title -->
+        <div class="section-title text-center">
+          <h2>Our Projects</h2>
+          <p>Showcase of work built by Innorvia Technology</p>
+        </div>
+
+        <div class="row g-4">
+          <!-- SAHAB AGRO -->
+          <div class="col-lg-4 col-md-6 reveal">
+            <div class="card project-card text-center border-0 h-100">
+              <img
+                src="assets/img/sahab.png"
+                class="mx-auto mt-4 rounded-3 shadow-sm project-main-img"
+                alt="Sahab Agro App"
+              />
+              <div class="card-body d-flex flex-column">
+                <h5 class="card-title">🌾 Sahab Agro App</h5>
+                <p class="text-primary fw-semibold mb-2">
+                  E-Commerce + Farmer Support
+                </p>
+                <p class="small text-muted mb-3">
+                  Mobile-first UI with cart, expertise cards, and smooth
+                  experience.
+                </p>
+                <div class="mt-auto">
+                  <button
+                    class="btn btn-outline-primary btn-sm"
+                    data-bs-toggle="modal"
+                    data-bs-target="#sahabModal"
+                  >
+                    View Details →
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- A TO Z COLLECTION -->
+          <div class="col-lg-4 col-md-6 reveal">
+            <div class="card project-card text-center border-0 h-100">
+              <img
+                src="assets/img/azcover.png"
+                class="mx-auto mt-4 rounded-3 shadow-sm project-main-img"
+                alt="A to Z Collection"
+              />
+              <div class="card-body d-flex flex-column">
+                <h5 class="card-title">👕 A to Z Collection</h5>
+                <p class="text-primary fw-semibold mb-2">Clothing E-Commerce</p>
+                <p class="small text-muted mb-3">
+                  Fashion marketplace with shopping flow & admin controls.
+                </p>
+                <div
+                  class="mt-auto d-flex gap-2 justify-content-center flex-wrap"
+                >
+                  <button
+                    class="btn btn-outline-primary btn-sm"
+                    data-bs-toggle="modal"
+                    data-bs-target="#atozModal"
+                  >
+                    View Details →
+                  </button>
+                  <a
+                    href="https://duahub.com"
+                    target="_blank"
+                    class="btn btn-primary btn-sm"
+                  >
+                    Visit Site 🌐
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- FIXORA SERVICE APP -->
+          <div class="col-lg-4 col-md-6 reveal">
+            <div class="card project-card text-center border-0 h-100">
+              <img
+                src="assets/img/fixora.jpeg"
+                class="mx-auto mt-4 project-main-img spin-round"
+                alt="Fixora Service App"
+              />
+              <div class="card-body d-flex flex-column">
+                <h5 class="card-title">🔧 Fixora Service App</h5>
+                <p class="text-primary fw-semibold mb-2">
+                  Service Booking Application
+                </p>
+                <p class="small text-muted mb-3">
+                  Book home repair services, track technicians, and make secure
+                  payments.
+                </p>
+                <div class="mt-auto">
+                  <button
+                    class="btn btn-outline-primary btn-sm"
+                    data-bs-toggle="modal"
+                    data-bs-target="#fixoraModal"
+                  >
+                    View Details →
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- DUA HUB -->
+          <div class="col-lg-4 col-md-6 reveal">
+            <div class="card project-card text-center border-0 h-100">
+              <img
+                src="assets/img/duaM.png"
+                class="mx-auto mt-4 project-main-img"
+                alt="Dua Hub Website"
+              />
+
+              <div class="card-body d-flex flex-column">
+                <h5 class="card-title">📿 Dua Hub</h5>
+
+                <p class="text-primary fw-semibold mb-2">Islamic Website</p>
+
+                <p class="small text-muted mb-3">
+                  Fast & scalable Islamic website featuring duas, categories,
+                  search and mobile-first UI.
+                </p>
+
+                <div
+                  class="mt-auto d-flex gap-2 justify-content-center flex-wrap"
+                >
+                  <button
+                    class="btn btn-outline-primary btn-sm"
+                    data-bs-toggle="modal"
+                    data-bs-target="#duahubModal"
+                  >
+                    View Details →
+                  </button>
+                  <a
+                    href="https://duahub.com"
+                    target="_blank"
+                    class="btn btn-primary btn-sm"
+                  >
+                    Visit Site 🌐
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- FANTASY GAME -->
+          <div class="col-lg-4 col-md-6 reveal">
+            <div class="card project-card text-center border-0 h-100">
+              <img
+                src="assets/img/fant.png"
+                class="mx-auto mt-4 project-main-img"
+                alt="Fantasy Game App"
+              />
+
+              <div class="card-body d-flex flex-column">
+                <h5 class="card-title">🎮 Fantasy Game</h5>
+
+                <p class="text-primary fw-semibold mb-2">Game Development</p>
+
+                <p class="small text-muted mb-3">
+                  Fantasy gaming application with wallet integration, points
+                  system & smooth gameplay built using React Native.
+                </p>
+
+                <div
+                  class="mt-auto d-flex gap-2 justify-content-center flex-wrap"
+                >
+                  <button
+                    class="btn btn-outline-primary btn-sm"
+                    data-bs-toggle="modal"
+                    data-bs-target="#fantasyModal"
+                  >
+                    View Details →
+                  </button>
+
+                  <!-- OPTIONAL button -->
+                  <!-- change URL when ready -->
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- ALGO 711 -->
+          <div class="col-lg-4 col-md-6 reveal">
+            <div class="card project-card text-center border-0 h-100">
+              <img
+                src="assets/img/711.png"
+                class="mx-auto mt-4 project-main-img"
+                alt="Algo 711 Trading App"
+              />
+
+              <div class="card-body d-flex flex-column">
+                <h5 class="card-title">📈 Algo 711</h5>
+
+                <p class="text-primary fw-semibold mb-2">
+                  Trading App Development
+                </p>
+
+                <p class="small text-muted mb-3">
+                  Trading automation powered by Flask, TradingView alerts,
+                  broker APIs & real-time execution.
+                </p>
+
+                <div
+                  class="mt-auto d-flex gap-2 justify-content-center flex-wrap"
+                >
+                  <button
+                    class="btn btn-outline-primary btn-sm"
+                    data-bs-toggle="modal"
+                    data-bs-target="#algoModal"
+                  >
+                    View Details →
+                  </button>
+
+                  <!-- optional -->
+                  <a href="#" target="_blank" class="btn btn-primary btn-sm">
+                    Visit Site 🌐
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- END CARDS -->
+        </div>
+      </div>
+    </section>
+
+    <!-- MODAL : SAHAB AGRO -->
+    <div class="modal fade" id="sahabModal" tabindex="-1">
+      <div class="modal-dialog modal-xl modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Sahab Agro – Screenshots</h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <div class="row g-3">
+              <div class="col-md-6">
+                <img
+                  src="assets/img/ag1.jpeg"
+                  class="img-fluid rounded shadow-sm"
+                />
+              </div>
+              <div class="col-md-6">
+                <img
+                  src="assets/img/ag2.jpeg"
+                  class="img-fluid rounded shadow-sm"
+                />
+              </div>
+              <div class="col-md-6">
+                <img
+                  src="assets/img/ag3.jpeg"
+                  class="img-fluid rounded shadow-sm"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- MODAL : A TO Z COLLECTION -->
+    <div class="modal fade" id="atozModal" tabindex="-1">
+      <div class="modal-dialog modal-xl modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">A to Z Collection – Screenshots</h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <div class="row g-3">
+              <div class="col-md-6">
+                <img
+                  src="assets/img/az.jpeg"
+                  class="img-fluid rounded shadow-sm"
+                />
+              </div>
+              <div class="col-md-6">
+                <img
+                  src="assets/img/az2.jpeg"
+                  class="img-fluid rounded shadow-sm"
+                />
+              </div>
+              <div class="col-md-6">
+                <img
+                  src="assets/img/az3.jpeg"
+                  class="img-fluid rounded shadow-sm"
+                />
+              </div>
+              <div class="col-md-6">
+                <img
+                  src="assets/img/az4.jpeg"
+                  class="img-fluid rounded shadow-sm"
+                />
+              </div>
+              <div class="col-md-6">
+                <img
+                  src="assets/img/az5.jpeg"
+                  class="img-fluid rounded shadow-sm"
+                />
+              </div>
+              <div class="col-md-6">
+                <img
+                  src="assets/img/az6.jpeg"
+                  class="img-fluid rounded shadow-sm"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- MODAL : DUA HUB -->
+    <div class="modal fade" id="duahubModal" tabindex="-1">
+      <div class="modal-dialog modal-xl modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Dua Hub – Screenshots</h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+            ></button>
+          </div>
+
+          <div class="modal-body">
+            <div class="row g-3">
+              <div class="col-md-6">
+                <img
+                  src="assets/img/dua.jpeg"
+                  class="img-fluid rounded shadow-sm"
+                />
+              </div>
+              <div class="col-md-6">
+                <img
+                  src="assets/img/ua2.jpeg"
+                  class="img-fluid rounded shadow-sm"
+                />
+              </div>
+              <div class="col-md-6">
+                <img
+                  src="assets/img/ua3.jpeg"
+                  class="img-fluid rounded shadow-sm"
+                />
+              </div>
+              <div class="col-md-6">
+                <img
+                  src="assets/img/dua4.jpeg"
+                  class="img-fluid rounded shadow-sm"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- MODAL : FANTASY GAME -->
+    <div class="modal fade" id="fantasyModal" tabindex="-1">
+      <div class="modal-dialog modal-xl modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Fantasy Game – Screenshots</h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+            ></button>
+          </div>
+
+          <div class="modal-body">
+            <div class="row g-3">
+              <div class="col-md-6">
+                <img
+                  src="assets/img/shot_13.jpg"
+                  class="img-fluid rounded shadow-sm"
+                />
+              </div>
+              <div class="col-md-6">
+                <img
+                  src="assets/img/shot_1.jpg"
+                  class="img-fluid rounded shadow-sm"
+                />
+              </div>
+              <div class="col-md-6">
+                <img
+                  src="assets/img/shot_10.jpg"
+                  class="img-fluid rounded shadow-sm"
+                />
+              </div>
+              <div class="col-md-6">
+                <img
+                  src="assets/img/shot_58.jpg"
+                  class="img-fluid rounded shadow-sm"
+                />
+              </div>
+              <div class="col-md-6">
+                <img
+                  src="assets/img/shot_49.jpg"
+                  class="img-fluid rounded shadow-sm"
+                />
+              </div>
+              <div class="col-md-6">
+                <img
+                  src="assets/img/shot_4.jpg"
+                  class="img-fluid rounded shadow-sm"
+                />
+              </div>
+              <div class="col-md-6">
+                <img
+                  src="assets/img/shot_22.jpg"
+                  class="img-fluid rounded shadow-sm"
+                />
+              </div>
+              <div class="col-md-6">
+                <img
+                  src="assets/img/shot_82.jpg"
+                  class="img-fluid rounded shadow-sm"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- MODAL : ALGO 711 -->
+    <div class="modal fade" id="algoModal" tabindex="-1">
+      <div class="modal-dialog modal-xl modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Algo 711 – Screenshots</h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+            ></button>
+          </div>
+
+          <div class="modal-body">
+            <div class="row g-3">
+              <div class="col-md-6">
+                <img
+                  src="assets/img/711.png"
+                  class="img-fluid rounded shadow-sm"
+                  alt="Algo Trading Screen 1"
+                />
+              </div>
+
+              <div class="col-md-6">
+                <img
+                  src="assets/img/frame_1.jpg"
+                  class="img-fluid rounded shadow-sm"
+                  alt="Algo Trading Screen 2"
+                />
+              </div>
+
+              <div class="col-md-6">
+                <img
+                  src="assets/img/frame_10.jpg"
+                  class="img-fluid rounded shadow-sm"
+                  alt="Algo Trading Screen 3"
+                />
+              </div>
+
+              <div class="col-md-6">
+                <img
+                  src="assets/img/frame_13.jpg"
+                  class="img-fluid rounded shadow-sm"
+                  alt="Algo Trading Screen 4"
+                />
+              </div>
+              <div class="col-md-6">
+                <img
+                  src="assets/img/frame_4.jpg"
+                  class="img-fluid rounded shadow-sm"
+                  alt="Algo Trading Screen 4"
+                />
+              </div>
+              <div class="col-md-6">
+                <img
+                  src="assets/img/frame_7.jpg"
+                  class="img-fluid rounded shadow-sm"
+                  alt="Algo Trading Screen 4"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
 
     <!-- ================= TESTIMONIALS ================= -->
     <section class="bg-brandLight py-20">
@@ -436,9 +1097,101 @@
       </div>
     </section>
 
-    <footer class="border-t text-center py-6 text-sm text-slate-500">
-      © 2026 Innorvia Technology. All rights reserved.
+    <footer id="footer" class="footer">
+      <div class="container footer-top">
+        <div class="row gy-4">
+          <div class="col-lg-4 col-md-6 footer-about">
+            <a href="index.html" class="logo d-flex align-items-center">
+              <span class="sitename">Project Wala</span>
+            </a>
+            <div class="footer-contact pt-3">
+              <p>Kausarbaugh , Kondhwa</p>
+              <p>Kondhwa , pune</p>
+              <!-- <p class="mt-3">
+                <strong>Phone:</strong> <span>9373388416</span>
+              </p> -->
+              <p>
+                <strong>Email:</strong>
+                <span>innorviatechnology@gmail.com</span>
+              </p>
+            </div>
+            <div class="social-links d-flex mt-4">
+              <a href=""><i class="bi bi-twitter-x"></i></a>
+              <a href=""><i class="bi bi-facebook"></i></a>
+              <a href=""><i class="bi bi-instagram"></i></a>
+              <a href=""><i class="bi bi-linkedin"></i></a>
+            </div>
+          </div>
+
+          <div class="col-lg-2 col-md-3 footer-links">
+            <h4>Useful Links</h4>
+            <ul>
+              <li><a href="#">Home</a></li>
+              <li><a href="#">About us</a></li>
+              <li><a href="#">Services</a></li>
+              <li><a href="#">Terms of service</a></li>
+              <li><a href="#">Privacy policy</a></li>
+            </ul>
+          </div>
+
+          <div class="col-lg-2 col-md-3 footer-links">
+            <h4>Our Services</h4>
+            <ul>
+              <li><a href="#">Mobile Application </a></li>
+              <li><a href="#">Web Development</a></li>
+              <li><a href="#">Desktop Application </a></li>
+              <li><a href="#">Digital Marketing</a></li>
+              <li><a href="#">E-commerce & Billing </a></li>
+            </ul>
+          </div>
+
+          <div class="col-lg-2 col-md-3 footer-links">
+            <h4>Industries</h4>
+            <ul>
+              <li><a href="#">Startups</a></li>
+              <li><a href="#">Small Businesses</a></li>
+              <li><a href="#">Enterprises</a></li>
+              <li><a href="#">E-Commerce</a></li>
+              <li><a href="#">Education & EdTech</a></li>
+            </ul>
+          </div>
+
+          <div class="col-lg-2 col-md-3 footer-links">
+            <h4>Solutions</h4>
+            <ul>
+              <li><a href="#">Web Applications</a></li>
+              <li><a href="#">Mobile Apps</a></li>
+              <li><a href="#">Custom Software</a></li>
+              <li><a href="#">UI/UX Design</a></li>
+              <li><a href="#">Maintenance & Support</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="container copyright text-center mt-4">
+        <p>
+          © <span>Copyright</span>
+          <strong class="px-1 sitename">Innorvia Technology</strong>
+          <span>All Rights Reserved</span>
+        </p>
+        <div class="credits">
+          <!-- All the links in the footer should remain intact. -->
+          <!-- You can delete the links only if you've purchased the pro version. -->
+          <!-- Licensing information: https://bootstrapmade.com/license/ -->
+          <!-- Purchase the pro version with working PHP/AJAX contact form: [buy-url] -->
+          <!-- Designed by <a href="https://bootstrapmade.com/">innorviatechnology</a> -->
+        </div>
+      </div>
     </footer>
+
+    <!-- Scroll Top -->
+    <a
+      href="#"
+      id="scroll-top"
+      class="scroll-top d-flex align-items-center justify-content-center"
+      ><i class="bi bi-arrow-up-short"></i
+    ></a>
 
     <!-- ================= JS ================= -->
     <script>
@@ -463,6 +1216,97 @@
         );
 
         reveals.forEach((el) => observer.observe(el));
+      });
+
+      const scrollTop = document.getElementById("scroll-top");
+
+      window.addEventListener("scroll", () => {
+        if (window.scrollY > 300) {
+          scrollTop.classList.add("active");
+        } else {
+          scrollTop.classList.remove("active");
+        }
+      });
+
+      scrollTop.addEventListener("click", (e) => {
+        e.preventDefault();
+        window.scrollTo({
+          top: 0,
+          behavior: "smooth",
+        });
+      });
+    </script>
+    <script>
+      const reveals = document.querySelectorAll(".reveal");
+
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("active");
+            }
+          });
+        },
+        { threshold: 0.2 }
+      );
+
+      reveals.forEach((el) => observer.observe(el));
+    </script>
+    <script>
+      const animatedItems = document.querySelectorAll(
+        ".reveal-up, .reveal-left, .reveal-right, .draw-line"
+      );
+
+      const observe = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              // Element enters viewport → animate
+              entry.target.classList.add("active");
+            } else {
+              // Element leaves viewport → reset
+              entry.target.classList.remove("active");
+            }
+          });
+        },
+        {
+          threshold: 0.25,
+        }
+      );
+
+      animatedItems.forEach((el) => observe.observe(el));
+    </script>
+    <script>
+      function revealOnScroll() {
+        const reveals = document.querySelectorAll(".reveal");
+        reveals.forEach((el) => {
+          const windowHeight = window.innerHeight;
+          const elementTop = el.getBoundingClientRect().top;
+          const threshold = 100;
+
+          if (elementTop < windowHeight - threshold) {
+            el.classList.add("active");
+          } else {
+            el.classList.remove("active");
+          }
+        });
+      }
+
+      window.addEventListener("scroll", revealOnScroll);
+      revealOnScroll(); // Trigger on load
+    </script>
+    <script>
+      gsap.utils.toArray(".project-card").forEach((card) => {
+        gsap.from(card, {
+          scrollTrigger: {
+            trigger: card,
+            start: "top 85%",
+          },
+          opacity: 0,
+          y: 60,
+          duration: 0.6,
+          ease: "power2.out",
+        });
       });
     </script>
   </body>

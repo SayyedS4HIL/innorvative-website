@@ -1,0 +1,614 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .project-card img {
+        max-width: 100%;
+        object-fit: cover;
+      }
+
+      /* Ensure cards stay equal height */
+      .project-card {
+        height: 100%;
+      }
+
+      /* Modal images responsive */
+      .modal-body img {
+        width: 100%;
+        height: auto;
+        object-fit: cover;
+      }
+      .project-main-img {
+        width: 100%;
+        height: auto; /* image keeps natural height */
+        object-fit: contain;
+      }
+      .project-card {
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+      }
+
+      .project-main-img {
+        width: 100%;
+        max-height: 240px; /* optional limit */
+        object-fit: contain;
+      }
+      .project-main-img {
+        width: 100%;
+        height: 240px;
+        object-fit: contain;
+        background: #f2f2f2; /* adds clean space */
+        padding: 6px;
+      }
+      /* Project card hover effect */
+      .project-card {
+        transition: all 0.3s ease;
+        border-radius: 14px;
+        background: #ffffff;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+      }
+
+      .project-card:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 10px 24px rgba(0, 0, 0, 0.15);
+        cursor: pointer;
+      }
+
+      /* Animate image slightly */
+      .project-card img {
+        transition: all 0.3s ease;
+      }
+
+      .project-card:hover img {
+        transform: scale(1.03);
+      }
+      .project-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 12px 28px rgba(0, 150, 255, 0.25);
+      }
+      .reveal {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 0.7s ease;
+}
+
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0px);
+}
+
+      /* Rotate image in a circle */
+      /* .spin-round {
+  animation: spin 6s linear infinite;
+  display: block;
+  margin: auto;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+} */
+    </style>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+
+  </head>
+  <body>
+
+    
+    <!-- OUR PROJECTS -->
+    <section id="projects" class="section bg-light border-top">
+      <div class="container">
+        <!-- Title -->
+        <div class="section-title text-center">
+          <h2>Our Projects</h2>
+          <p>Showcase of work built by Innorvia Technology</p>
+        </div>
+
+        <div class="row g-4">
+          <!-- SAHAB AGRO -->
+          <div class="col-lg-4 col-md-6 reveal">
+            <div class="card project-card text-center border-0 h-100">
+              <img
+                src="assets/img/sahab.png"
+                class="mx-auto mt-4 rounded-3 shadow-sm project-main-img"
+                alt="Sahab Agro App"
+              />
+              <div class="card-body d-flex flex-column">
+                <h5 class="card-title">🌾 Sahab Agro App</h5>
+                <p class="text-primary fw-semibold mb-2">
+                  E-Commerce + Farmer Support
+                </p>
+                <p class="small text-muted mb-3">
+                  Mobile-first UI with cart, expertise cards, and smooth
+                  experience.
+                </p>
+                <div class="mt-auto">
+                  <button
+                    class="btn btn-outline-primary btn-sm"
+                    data-bs-toggle="modal"
+                    data-bs-target="#sahabModal"
+                  >
+                    View Details →
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- A TO Z COLLECTION -->
+          <div class="col-lg-4 col-md-6 reveal">
+            <div class="card project-card text-center border-0 h-100">
+              <img
+                src="assets/img/azcover.png"
+                class="mx-auto mt-4 rounded-3 shadow-sm project-main-img"
+                alt="A to Z Collection"
+              />
+              <div class="card-body d-flex flex-column">
+                <h5 class="card-title">👕 A to Z Collection</h5>
+                <p class="text-primary fw-semibold mb-2">Clothing E-Commerce</p>
+                <p class="small text-muted mb-3">
+                  Fashion marketplace with shopping flow & admin controls.
+                </p>
+                <div class="mt-auto">
+                  <button
+                    class="btn btn-outline-primary btn-sm"
+                    data-bs-toggle="modal"
+                    data-bs-target="#atozModal"
+                  >
+                    View Details →
+                  </button>
+                     <a
+          href="https://duahub.com"
+          target="_blank"
+          class="btn btn-primary btn-sm"
+        >
+          Visit Site 🌐
+        </a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- ADD MORE PROJECTS HERE — copy/paste above card -->
+          <!-- FIXORA SERVICE APP -->
+          <div class="col-lg-4 col-md-6 reveal">
+            <div class="card project-card text-center border-0 h-100">
+              <img
+                src="assets/img/fixora.jpeg"
+                class="mx-auto mt-4 project-main-img spin-round"
+                alt="Fixora Service App"
+              />
+
+              <div class="card-body d-flex flex-column">
+                <h5 class="card-title">🔧 Fixora Service App</h5>
+
+                <p class="text-primary fw-semibold mb-2">
+                  Service Booking Application
+                </p>
+
+                <p class="small text-muted mb-3">
+                  Book home repair services, track technicians, and make secure
+                  payments.
+                </p>
+
+                <div class="mt-auto">
+                  <button
+                    class="btn btn-outline-primary btn-sm"
+                    data-bs-toggle="modal"
+                    data-bs-target="#fixoraModal"
+                  >
+                    View Details →
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- DUA HUB -->
+          <div class="col-lg-4 col-md-6 reveal">
+            <div class="card project-card text-center border-0 h-100">
+              <img
+                src="assets/img/duaM.png"
+                class="mx-auto mt-4 project-main-img"
+                alt="Dua Hub Website"
+              />
+
+              <div class="card-body d-flex flex-column">
+                <h5 class="card-title">📿 Dua Hub</h5>
+
+                <p class="text-primary fw-semibold mb-2">Islamic Website</p>
+
+                <p class="small text-muted mb-3">
+                  Fast & scalable Islamic website featuring duas, categories,
+                  search and mobile-first UI.
+                </p>
+
+                <div class="mt-auto">
+                  <button
+                    class="btn btn-outline-primary btn-sm"
+                    data-bs-toggle="modal"
+                    data-bs-target="#duahubModal"
+                  >
+                    View Details →
+                  </button>
+                     <a
+          href="https://duahub.com"
+          target="_blank"
+          class="btn btn-primary btn-sm"
+        >
+          Visit Site 🌐
+        </a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- ADD MORE PROJECTS HERE — copy/paste above card -->
+        </div>
+      </div>
+    </section>
+
+    <!-- MODAL : SAHAB AGRO -->
+    <div class="modal fade" id="sahabModal" tabindex="-1">
+      <div class="modal-dialog modal-xl modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Sahab Agro – Screenshots</h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <div class="row g-3">
+              <div class="col-md-6">
+                <img
+                  src="assets/img/ag1.jpeg"
+                  class="img-fluid rounded shadow-sm"
+                />
+              </div>
+              <div class="col-md-6">
+                <img
+                  src="assets/img/ag2.jpeg"
+                  class="img-fluid rounded shadow-sm"
+                />
+              </div>
+              <div class="col-md-6">
+                <img
+                  src="assets/img/ag3.jpeg"
+                  class="img-fluid rounded shadow-sm"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- MODAL : A TO Z COLLECTION -->
+    <div class="modal fade" id="atozModal" tabindex="-1">
+      <div class="modal-dialog modal-xl modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">A to Z Collection – Screenshots</h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <div class="row g-3">
+              <div class="col-md-6">
+                <img
+                  src="assets/img/az.jpeg"
+                  class="img-fluid rounded shadow-sm"
+                />
+              </div>
+              <div class="col-md-6">
+                <img
+                  src="assets/img/az2.jpeg"
+                  class="img-fluid rounded shadow-sm"
+                />
+              </div>
+              <div class="col-md-6">
+                <img
+                  src="assets/img/az3.jpeg"
+                  class="img-fluid rounded shadow-sm"
+                />
+              </div>
+              <div class="col-md-6">
+                <img
+                  src="assets/img/az4.jpeg"
+                  class="img-fluid rounded shadow-sm"
+                />
+              </div>
+              <div class="col-md-6">
+                <img
+                  src="assets/img/az5.jpeg"
+                  class="img-fluid rounded shadow-sm"
+                />
+              </div>
+              <div class="col-md-6">
+                <img
+                  src="assets/img/az6.jpeg"
+                  class="img-fluid rounded shadow-sm"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- MODAL : DUA HUB -->
+    <div class="modal fade" id="duahubModal" tabindex="-1">
+      <div class="modal-dialog modal-xl modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Dua Hub – Screenshots</h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+            ></button>
+          </div>
+
+          <div class="modal-body">
+            <div class="row g-3">
+              <!-- Add as many images as you have -->
+              <div class="col-md-6">
+                <img
+                  src="assets/img/dua.jpeg"
+                  class="img-fluid rounded shadow-sm"
+                  alt="Dua Hub Screen 1"
+                />
+              </div>
+
+              <div class="col-md-6">
+                <img
+                  src="assets/img/ua2.jpeg"
+                  class="img-fluid rounded shadow-sm"
+                  alt="Dua Hub Screen 2"
+                />
+              </div>
+
+              <div class="col-md-6">
+                <img
+                  src="assets/img/ua3.jpeg"
+                  class="img-fluid rounded shadow-sm"
+                  alt="Dua Hub Screen 3"
+                />
+                 
+            </div>
+              <div class="col-md-6">
+                <img
+                  src="assets/img/dua4.jpeg"
+                  class="img-fluid rounded shadow-sm"
+                  alt="Dua Hub Screen 3"
+                />
+                </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script>
+  function revealOnScroll() {
+    const reveals = document.querySelectorAll(".reveal");
+    reveals.forEach((el) => {
+      const windowHeight = window.innerHeight;
+      const elementTop = el.getBoundingClientRect().top;
+      const threshold = 100;
+
+      if (elementTop < windowHeight - threshold) {
+        el.classList.add("active");
+      } else {
+        el.classList.remove("active");
+      }
+    });
+  }
+
+  window.addEventListener("scroll", revealOnScroll);
+  revealOnScroll(); // Trigger on load
+</script>
+<script>
+  gsap.utils.toArray(".project-card").forEach((card) => {
+    gsap.from(card, {
+      scrollTrigger: {
+        trigger: card,
+        start: "top 85%",
+      },
+      opacity: 0,
+      y: 60,
+      duration: 0.6,
+      ease: "power2.out",
+    });
+  });
+</script>
+
+
+  </body>
+</html>
+
+
+
+
+
+    <!--  -->
+
+    <!-- OUR PROJECTS -->
+    <section id="projects" class="section bg-light border-top">
+      <div class="container">
+        <!-- Section Heading -->
+        <div class="section-title text-center">
+          <h2>Our Projects</h2>
+          <p>
+            A showcase of projects delivered by Innorvia Technology using modern
+            technologies and clean design practices.
+          </p>
+        </div>
+
+        <div class="row g-4">
+          <!-- PROJECT 1 -->
+          <div class="col-lg-4 col-md-6 reveal">
+            <div class="card project-card text-center border-0">
+              <!-- <img
+            src="project1.jpg"
+            class="mx-auto mt-4 rounded-3 shadow-sm"
+            style="width:90%; height:180px; object-fit:cover;"
+            alt="Portfolio Website Project"
+          /> -->
+
+              <div class="card-body">
+                <h5 class="card-title">🖥️ VRI Inventory Desktop App</h5>
+                <p class="text-primary fw-semibold mb-2">
+                  Business Development
+                </p>
+                <p class="card-text small text-muted">
+                  Billing & inventory system with barcodes, credit/debit, and
+                  branch support.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 reveal">
+            <div class="card project-card text-center border-0">
+              <!-- <img
+            src="project1.jpg"
+            class="mx-auto mt-4 rounded-3 shadow-sm"
+            style="width:90%; height:180px; object-fit:cover;"
+            alt="Portfolio Website Project"
+          /> -->
+
+              <div class="card-body">
+                <h5 class="card-title">📈 Algo 711</h5>
+                <p class="text-primary fw-semibold mb-2">
+                  Trading App Development
+                </p>
+                <p class="card-text small text-muted">
+                  Trading automation powered by Flask and TradingView alerts
+                </p>
+              </div>
+            </div>
+          </div>
+          <!-- PROJECT 2 -->
+
+          <div class="col-lg-4 col-md-6 reveal">
+            <div class="card project-card h-100 text-center border-0">
+              <div class="card-body d-flex flex-column">
+                <h5 class="card-title">👕 A to Z Collection</h5>
+
+                <p class="text-primary fw-semibold mb-2">
+                  Clothing E-Commerce Website
+                </p>
+
+                <p class="card-text small text-muted mb-4">
+                  Fashion-focused online store with smooth shopping experience
+                  and admin control.
+                </p>
+
+                <!-- CTA -->
+                <div class="mt-auto">
+                  <a
+                    href="https://duahub.com"
+                    target="_blank"
+                    class="btn btn-outline-primary btn-sm"
+                  >
+                    Visit Website →
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- PROJECT 3 -->
+          <div class="col-lg-4 col-md-6 reveal">
+            <div class="card project-card h-100 text-center border-0">
+              <div class="card-body d-flex flex-column">
+                <h5 class="card-title">Dua Hub</h5>
+
+                <p class="text-primary fw-semibold mb-2">Islamic Website</p>
+
+                <p class="card-text small text-muted mb-4">
+                  A user-friendly mobile application designed for smooth
+                  performance and scalable architecture.
+                </p>
+
+                <!-- CTA -->
+                <div class="mt-auto">
+                  <a
+                    href="https://duahub.com"
+                    target="_blank"
+                    class="btn btn-outline-primary btn-sm"
+                  >
+                    Visit Website →
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- PROJECT 1 -->
+
+          <!-- PROJECT 1 -->
+          <div class="col-lg-4 col-md-6 reveal">
+            <div class="card project-card text-center border-0">
+              <!-- <img
+            src="project1.jpg"
+            class="mx-auto mt-4 rounded-3 shadow-sm"
+            style="width:90%; height:180px; object-fit:cover;"
+            alt="Portfolio Website Project"
+          /> -->
+
+              <div class="card-body">
+                <h5 class="card-title">🏠 Alcon Society Management</h5>
+                <p class="text-primary fw-semibold mb-2">
+                  Frontend Development
+                </p>
+                <p class="card-text small text-muted">
+                  A society management system with Excel-based billing,
+                  automated receipts, and a user-friendly interface for smooth
+                  operations.
+                </p>
+              </div>
+            </div>
+          </div>
+          <!-- PROJECT 1 -->
+          <div class="col-lg-4 col-md-6 reveal">
+            <div class="card project-card text-center border-0">
+              <!-- <img
+            src="project1.jpg"
+            class="mx-auto mt-4 rounded-3 shadow-sm"
+            style="width:90%; height:180px; object-fit:cover;"
+            alt="Portfolio Website Project"
+          /> -->
+
+              <div class="card-body">
+                <h5 class="card-title">🎮 Fantasy Game</h5>
+                <p class="text-primary fw-semibold mb-2">Game Development</p>
+                <p class="card-text small text-muted">
+                  A fantasy gaming application with wallet integration, points
+                  system, and smooth gameplay built using React Native.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
