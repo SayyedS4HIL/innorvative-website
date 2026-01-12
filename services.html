@@ -1,0 +1,1230 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Our Services | Mobile App Development Company</title>
+    <meta
+      name="description"
+      content="Mobile app and web development company offering Android apps, websites, custom software, e-commerce billing systems, digital marketing, backend and cloud solutions."
+    />
+    <meta
+      name="keywords"
+      content="Mobile App Development, Android App Development, Website Development, Custom Software, E-commerce Billing, Digital Marketing"
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Mobile App & Web Development Services" />
+    <meta
+      property="og:description"
+      content="High-performance mobile, web, and software solutions for businesses."
+    />
+
+    <!-- Bootstrap -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- AOS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <!-- AOS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              primary: "#0d6efd",
+              primaryDark: "#084298",
+            },
+          },
+        },
+      };
+    </script>
+    <style>
+      .step-card:hover {
+        transform: translateY(-10px) scale(1.03);
+        box-shadow: 0 25px 60px rgba(13, 110, 253, 0.35);
+      }
+      .step-number {
+        background: linear-gradient(135deg, #0d6efd, #084298);
+      }
+    </style>
+
+    <style>
+      /* ================= GLOBAL ================= */
+      body {
+        font-family: "Segoe UI", Arial, sans-serif;
+        line-height: 1.6;
+        scroll-behavior: smooth;
+      }
+      .section {
+        padding: 70px 0;
+      }
+      .light-background {
+        background: #f8f9fa;
+      }
+      .section-title {
+        text-align: center;
+        margin-bottom: 40px;
+      }
+      .section-title h3 {
+        font-weight: 700;
+      }
+      .section-title p {
+        max-width: 720px;
+        margin: auto;
+        color: #555;
+      }
+
+      /* ================= SERVICE CARD ================= */
+      .service-card {
+        background: #ffffff;
+        padding: 25px;
+        border-radius: 12px;
+        display: flex;
+        height: 100%;
+        position: relative;
+        transition: all 0.4s ease;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        cursor: pointer;
+      }
+      .service-card:hover {
+        transform: translateY(-10px) scale(1.02);
+        box-shadow: 0 20px 50px rgba(0, 0, 0, 0.2);
+      }
+      .service-card::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        border-radius: 12px;
+        background: linear-gradient(135deg, #0d6efd, transparent);
+        opacity: 0;
+        z-index: -1;
+        transition: 0.4s;
+      }
+      .service-card:hover::after {
+        opacity: 0.15;
+      }
+
+      /* ICON */
+      .service-card .icon {
+        font-size: 38px;
+        color: #0d6efd;
+        margin-right: 20px;
+        transition: 0.4s ease;
+      }
+      .service-card:hover .icon {
+        transform: rotate(8deg) scale(1.15);
+      }
+
+      /* TEXT */
+      .service-card h3 {
+        font-size: 20px;
+        font-weight: 600;
+        margin-bottom: 8px;
+      }
+      .service-card p {
+        font-size: 15px;
+        color: #555;
+      }
+
+      /* READ MORE */
+      .read-more {
+        color: #0d6efd;
+        font-weight: 600;
+        text-decoration: none;
+      }
+      .read-more i {
+        margin-left: 5px;
+        transition: 0.3s;
+      }
+      .read-more:hover i {
+        transform: translateX(8px);
+      }
+
+      /* ================= CTA ================= */
+      .cta {
+        background: linear-gradient(135deg, #0d6efd, #084298);
+        color: #fff;
+        text-align: center;
+        padding: 70px 20px;
+      }
+      .cta a {
+        background: #fff;
+        color: #0d6efd;
+        padding: 12px 32px;
+        border-radius: 30px;
+        text-decoration: none;
+        font-weight: 600;
+        transition: 0.4s;
+      }
+      .cta a:hover {
+        transform: scale(1.05);
+        box-shadow: 0 10px 25px rgba(255, 255, 255, 0.4);
+      }
+
+      /* ================= RESPONSIVE ================= */
+      @media (max-width: 768px) {
+        .service-card {
+          flex-direction: column;
+        }
+        .service-card .icon {
+          margin-bottom: 12px;
+        }
+      }
+
+      /* ================= DETAIL SECTIONS ================= */
+      .service-detail {
+        display: none;
+        padding: 50px 20px;
+        background: #e9f0ff;
+        border-radius: 12px;
+        margin-bottom: 30px;
+        animation: fadeIn 0.6s ease;
+      }
+      .service-detail h3 {
+        font-size: 26px;
+        margin-bottom: 15px;
+        color: #0d6efd;
+      }
+      .service-detail p,
+      .service-detail li {
+        font-size: 16px;
+        margin-bottom: 10px;
+        color: #333;
+      }
+      .service-detail ul {
+        padding-left: 20px;
+        margin-bottom: 15px;
+      }
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+          transform: translateY(20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+    </style>
+    <style>
+      /* ---------- Glow & Pop-out Animation ---------- */
+      .faq-card {
+        transition: all 0.4s ease;
+        position: relative;
+      }
+      .faq-card:hover {
+        transform: translateY(-8px) scale(1.03);
+        box-shadow: 0 20px 50px rgba(13, 110, 253, 0.3);
+        border-left: 4px solid #0d6efd;
+      }
+      .faq-card button {
+        transition: all 0.3s ease;
+      }
+      .faq-card button:hover {
+        color: #0d6efd;
+      }
+
+      /* Accordion */
+      .faq-content {
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.5s ease, padding 0.3s ease;
+      }
+      .faq-card.open .faq-content {
+        max-height: 500px;
+        padding-top: 1rem;
+        padding-bottom: 1rem;
+      }
+      .faq-card .icon {
+        transition: transform 0.4s ease;
+      }
+      .faq-card.open .icon {
+        transform: rotate(180deg);
+      }
+
+      /* CTA Buttons */
+      .cta-btn {
+        display: inline-block;
+        background-color: #0d6efd;
+        color: #fff;
+        padding: 12px 32px;
+        border-radius: 9999px;
+        font-weight: 600;
+        transition: all 0.4s;
+        text-align: center;
+      }
+      .cta-btn:hover {
+        background-color: #084298;
+        transform: scale(1.1);
+        box-shadow: 0 12px 30px rgba(13, 110, 253, 0.4);
+      }
+
+      /* Smooth fade for modal effect */
+    </style>
+    <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon" />
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Nunito:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Vendor CSS Files -->
+    <link
+      href="assets/vendor/bootstrap/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="assets/vendor/bootstrap-icons/bootstrap-icons.css"
+      rel="stylesheet"
+    />
+    <link href="assets/vendor/aos/aos.css" rel="stylesheet" />
+    <link
+      href="assets/vendor/glightbox/css/glightbox.min.css"
+      rel="stylesheet"
+    />
+    <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet" />
+
+    <!-- Main CSS File -->
+    <link href="assets/css/main.css" rel="stylesheet" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+      integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <style>
+      /* ---------- Animated Background Blobs ---------- */
+      .blob {
+        position: absolute;
+        border-radius: 50%;
+        filter: blur(70px);
+        opacity: 0.25;
+        animation: float 12s infinite alternate ease-in-out;
+        z-index: 0;
+      }
+      .blob.blue {
+        background: #0d6efd;
+        width: 300px;
+        height: 300px;
+        top: 5%;
+        left: 5%;
+      }
+      .blob.dark {
+        background: #d8dce2;
+        width: 350px;
+        height: 350px;
+        bottom: 5%;
+        right: 5%;
+      }
+      @keyframes float {
+        from {
+          transform: translateY(0px) translateX(0px);
+        }
+        to {
+          transform: translateY(-50px) translateX(20px);
+        }
+      }
+
+      /* ---------- Card Glow & Hover Animation ---------- */
+      .card-animate {
+        position: relative;
+        overflow: hidden;
+        transition: all 0.5s ease;
+      }
+      .card-animate::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        border-radius: 16px;
+        background: linear-gradient(135deg, #0d6efd, #084298, #0d6efd);
+        opacity: 0;
+        transition: 0.5s;
+      }
+      .card-animate:hover::before {
+        opacity: 0.15;
+      }
+      .card-animate:hover {
+        transform: translateY(-16px) scale(1.05);
+        box-shadow: 0 30px 70px rgba(13, 110, 253, 0.45);
+      }
+
+      /* ---------- Icon Animation ---------- */
+      .icon-animate {
+        animation: pulse 3s infinite;
+      }
+      .card-animate:hover .icon-animate {
+        transform: rotate(15deg) scale(1.2);
+      }
+      @keyframes pulse {
+        0%,
+        100% {
+          box-shadow: 0 0 0 rgba(13, 110, 253, 0.6);
+        }
+        50% {
+          box-shadow: 0 0 30px rgba(13, 110, 253, 0.9);
+        }
+      }
+
+      /* ---------- CTA Buttons ---------- */
+      .cta-btn {
+        display: inline-block;
+        background-color: #0d6efd;
+        color: white;
+        padding: 12px 32px;
+        border-radius: 9999px;
+        font-weight: 600;
+        text-align: center;
+        transition: all 0.4s ease;
+      }
+      .cta-btn:hover {
+        background-color: #084298;
+        transform: scale(1.1);
+        box-shadow: 0 15px 35px rgba(13, 110, 253, 0.5);
+      }
+    </style>
+  </head>
+  <body>
+    <!-- ================= NAVBAR (SAME AS HOME) ================= -->
+    <header id="header" class="header d-flex align-items-center fixed-top">
+      <div
+        class="header-container container-fluid container-xl position-relative d-flex align-items-center justify-content-between"
+      >
+        <a
+          href="index.html"
+          class="logo d-flex align-items-center me-auto me-xl-0"
+        >
+          <h1 class="sitename">Innorvia Technology</h1>
+        </a>
+
+        <nav id="navmenu" class="navmenu">
+          <ul>
+            <li><a href="index.html#hero">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="projects.html">Projects</a></li>
+            <li><a href="index.html#services" class="active">Services</a></li>
+            <li><a href="index.html#team">Team</a></li>
+          </ul>
+          <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+        </nav>
+
+        <a class="btn-getstarted" href="index.html#contact">Contact</a>
+      </div>
+    </header>
+    <br /><br /><br />
+    <!-- ================= SERVICES GRID ================= -->
+    <section id="services" class="services section light-background">
+      <div class="container section-title" data-aos="fade-down">
+        <h3>Our Services</h3>
+        <p>
+          We build scalable, secure, and high-performance digital solutions that
+          help your business grow.
+        </p>
+      </div>
+
+      <div class="container">
+        <div class="row g-4">
+          <!-- SERVICE CARDS -->
+          <div class="col-lg-6" data-aos="fade-up">
+            <div class="service-card" onclick="showSection('service-mobile')">
+              <div class="icon" aria-label="Mobile App Development">
+                <i class="fa-solid fa-mobile"></i>
+              </div>
+              <div>
+                <h3>Mobile App Development</h3>
+                <p>
+                  High-performance Android and cross-platform mobile
+                  applications.
+                </p>
+                <a class="read-more"
+                  >Read More <i class="bi bi-arrow-right"></i
+                ></a>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
+            <div class="service-card" onclick="showSection('service-website')">
+              <div class="icon" aria-label="Website Development">
+                <i class="bi bi-clipboard-data"></i>
+              </div>
+              <div>
+                <h3>Website Development</h3>
+                <p>Fast, SEO-friendly, and conversion-focused websites.</p>
+                <a class="read-more"
+                  >Read More <i class="bi bi-arrow-right"></i
+                ></a>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-6" data-aos="fade-up">
+            <div class="service-card" onclick="showSection('service-desktop')">
+              <div class="icon" aria-label="Desktop Application">
+                <i class="bi bi-easel"></i>
+              </div>
+              <div>
+                <h3>Desktop Application Development</h3>
+                <p>
+                  Secure, reliable, and scalable desktop software solutions.
+                </p>
+                <a class="read-more"
+                  >Read More <i class="bi bi-arrow-right"></i
+                ></a>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
+            <div class="service-card" onclick="showSection('service-digital')">
+              <div class="icon" aria-label="Digital Marketing">
+                <i class="bi bi-activity"></i>
+              </div>
+              <div>
+                <h3>Digital Marketing</h3>
+                <p>SEO, paid ads, and growth-focused digital strategies.</p>
+                <a class="read-more"
+                  >Read More <i class="bi bi-arrow-right"></i
+                ></a>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-6" data-aos="fade-up">
+            <div class="service-card" onclick="showSection('service-custom')">
+              <div class="icon" aria-label="Custom Software">
+                <i class="bi bi-gear"></i>
+              </div>
+              <div>
+                <h3>Custom Software Solutions</h3>
+                <p>Tailor-made software to automate and scale operations.</p>
+                <a class="read-more"
+                  >Read More <i class="bi bi-arrow-right"></i
+                ></a>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
+            <div
+              class="service-card"
+              onclick="showSection('service-ecommerce')"
+            >
+              <div class="icon" aria-label="E-commerce">
+                <i class="bi bi-cart-check"></i>
+              </div>
+              <div>
+                <h3>E-commerce & Billing</h3>
+                <p>Payments, invoices, orders, and customer management.</p>
+                <a class="read-more"
+                  >Read More <i class="bi bi-arrow-right"></i
+                ></a>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-6" data-aos="zoom-in">
+            <div class="service-card" onclick="showSection('service-uiux')">
+              <div class="icon" aria-label="UI/UX Design">
+                <i class="bi bi-palette"></i>
+              </div>
+              <div>
+                <h3>UI / UX Design</h3>
+                <p>User-focused designs that increase engagement.</p>
+                <a class="read-more"
+                  >Read More <i class="bi bi-arrow-right"></i
+                ></a>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-6" data-aos="zoom-in" data-aos-delay="100">
+            <div class="service-card" onclick="showSection('service-backend')">
+              <div class="icon" aria-label="Backend & API">
+                <i class="bi bi-diagram-3"></i>
+              </div>
+              <div>
+                <h3>API & Backend Development</h3>
+                <p>Secure backend systems and API integrations.</p>
+                <a class="read-more"
+                  >Read More <i class="bi bi-arrow-right"></i
+                ></a>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-6" data-aos="zoom-in">
+            <div
+              class="service-card"
+              onclick="showSection('service-maintenance')"
+            >
+              <div class="icon" aria-label="App Maintenance">
+                <i class="bi bi-tools"></i>
+              </div>
+              <div>
+                <h3>App Maintenance & Support</h3>
+                <p>Ongoing updates, monitoring, and support.</p>
+                <a class="read-more"
+                  >Read More <i class="bi bi-arrow-right"></i
+                ></a>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-6" data-aos="zoom-in" data-aos-delay="100">
+            <div class="service-card" onclick="showSection('service-qa')">
+              <div class="icon" aria-label="QA & Testing">
+                <i class="bi bi-cloud-check"></i>
+              </div>
+              <div>
+                <h3>Quality Assurance & App Testing</h3>
+                <p>
+                  Manual & automated testing ensures bug-free, secure apps and
+                  websites.
+                </p>
+                <a class="read-more"
+                  >Read More <i class="bi bi-arrow-right"></i
+                ></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= DETAILED SERVICE SECTIONS ================= -->
+    <div class="container">
+      <section id="service-mobile" class="service-detail" data-aos="fade-up">
+        <h3>Mobile App Development</h3>
+        <p>
+          We create high-performance Android and cross-platform mobile
+          applications, optimized for engagement and business growth.
+        </p>
+        <ul>
+          <li>Android & iOS Apps</li>
+          <li>Flutter / React Native Cross-Platform Apps</li>
+          <li>App UI/UX Design</li>
+          <li>Maintenance & Updates</li>
+        </ul>
+        <a class="read-more" onclick="scrollToServices()"
+          >Back to Services <i class="bi bi-arrow-up"></i
+        ></a>
+      </section>
+
+      <section id="service-website" class="service-detail" data-aos="fade-up">
+        <h3>Website Development</h3>
+        <p>
+          Fast, SEO-friendly, and conversion-focused websites tailored to your
+          business needs.
+        </p>
+        <ul>
+          <li>Responsive Websites</li>
+          <li>CMS (WordPress, Shopify)</li>
+          <li>E-commerce Development</li>
+          <li>SEO Optimization</li>
+        </ul>
+        <a class="read-more" onclick="scrollToServices()"
+          >Back to Services <i class="bi bi-arrow-up"></i
+        ></a>
+      </section>
+
+      <section id="service-desktop" class="service-detail" data-aos="fade-up">
+        <h3>Desktop Application Development</h3>
+        <p>
+          Secure, reliable, and scalable desktop software solutions for business
+          efficiency.
+        </p>
+        <ul>
+          <li>Windows / Mac Applications</li>
+          <li>Custom Business Software</li>
+          <li>Automation Tools</li>
+          <li>Integration with APIs</li>
+        </ul>
+        <a class="read-more" onclick="scrollToServices()"
+          >Back to Services <i class="bi bi-arrow-up"></i
+        ></a>
+      </section>
+
+      <section id="service-digital" class="service-detail" data-aos="fade-up">
+        <h3>Digital Marketing</h3>
+        <p>
+          Grow your online presence with SEO, paid ads, and growth-focused
+          strategies.
+        </p>
+        <ul>
+          <li>SEO Optimization</li>
+          <li>Social Media Ads</li>
+          <li>Content Marketing</li>
+          <li>Analytics & Reporting</li>
+        </ul>
+        <a class="read-more" onclick="scrollToServices()"
+          >Back to Services <i class="bi bi-arrow-up"></i
+        ></a>
+      </section>
+
+      <section id="service-custom" class="service-detail" data-aos="fade-up">
+        <h3>Custom Software Solutions</h3>
+        <p>
+          Tailor-made software to automate, scale, and streamline your business
+          operations.
+        </p>
+        <ul>
+          <li>Enterprise Solutions</li>
+          <li>CRM & ERP Software</li>
+          <li>Process Automation</li>
+          <li>Integration Services</li>
+        </ul>
+        <a class="read-more" onclick="scrollToServices()"
+          >Back to Services <i class="bi bi-arrow-up"></i
+        ></a>
+      </section>
+
+      <section id="service-ecommerce" class="service-detail" data-aos="fade-up">
+        <h3>E-commerce & Billing</h3>
+        <p>Seamless payment, invoice, and order management systems.</p>
+        <ul>
+          <li>Online Store Development</li>
+          <li>Payment Gateway Integration</li>
+          <li>Inventory & Billing</li>
+          <li>Customer Management</li>
+        </ul>
+        <a class="read-more" onclick="scrollToServices()"
+          >Back to Services <i class="bi bi-arrow-up"></i
+        ></a>
+      </section>
+
+      <section id="service-uiux" class="service-detail" data-aos="fade-up">
+        <h3>UI / UX Design</h3>
+        <p>User-focused design to increase engagement and retention.</p>
+        <ul>
+          <li>Wireframing & Prototyping</li>
+          <li>UI Design Systems</li>
+          <li>Mobile & Web UX Design</li>
+          <li>User Testing & Feedback</li>
+        </ul>
+        <a class="read-more" onclick="scrollToServices()"
+          >Back to Services <i class="bi bi-arrow-up"></i
+        ></a>
+      </section>
+
+      <section id="service-backend" class="service-detail" data-aos="fade-up">
+        <h3>API & Backend Development</h3>
+        <p>
+          Secure backend systems and API integrations for seamless performance.
+        </p>
+        <ul>
+          <li>Database Management</li>
+          <li>REST / GraphQL APIs</li>
+          <li>Authentication & Security</li>
+          <li>Cloud Integration</li>
+        </ul>
+        <a class="read-more" onclick="scrollToServices()"
+          >Back to Services <i class="bi bi-arrow-up"></i
+        ></a>
+      </section>
+
+      <section
+        id="service-maintenance"
+        class="service-detail"
+        data-aos="fade-up"
+      >
+        <h3>App Maintenance & Support</h3>
+        <p>
+          Ongoing updates, monitoring, and long-term support for all your apps.
+        </p>
+        <ul>
+          <li>Bug Fixes & Updates</li>
+          <li>Performance Monitoring</li>
+          <li>Feature Enhancements</li>
+          <li>Technical Support</li>
+        </ul>
+        <a class="read-more" onclick="scrollToServices()"
+          >Back to Services <i class="bi bi-arrow-up"></i
+        ></a>
+      </section>
+
+      <section id="service-qa" class="service-detail" data-aos="fade-up">
+        <h3>Quality Assurance & App Testing</h3>
+        <p>
+          Manual and automated testing ensures bug-free, secure, and
+          high-performance apps and websites.
+        </p>
+        <ul>
+          <li>Functional Testing</li>
+          <li>Performance Testing</li>
+          <li>Security Testing</li>
+          <li>Automation Testing</li>
+        </ul>
+        <a class="read-more" onclick="scrollToServices()"
+          >Back to Services <i class="bi bi-arrow-up"></i
+        ></a>
+      </section>
+    </div>
+
+    <!-- ================= HOW WE WORK ================= -->
+    <section class="py-24">
+      <div class="max-w-7xl mx-auto px-6 text-center">
+        <!-- Heading -->
+        <div data-aos="fade-down">
+          <h2 class="text-4xl md:text-5xl font-bold mb-4">
+            How <span class="text-primary">We Work</span>
+          </h2>
+          <p class="max-w-3xl mx-auto text-gray-600 text-lg">
+            A transparent, structured process designed for successful app &
+            website project delivery.
+          </p>
+        </div>
+
+        <!-- Steps -->
+        <div
+          class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 mt-20"
+        >
+          <!-- Step 1 -->
+          <div
+            data-aos="fade-up"
+            class="bg-white rounded-2xl p-8 step-card transition-all"
+          >
+            <div
+              class="w-14 h-14 mx-auto mb-6 rounded-full flex items-center justify-center text-white text-xl font-bold step-number"
+            >
+              01
+            </div>
+            <h4 class="text-xl font-semibold mb-4">Discovery & Requirements</h4>
+            <button
+              onclick="openModal(1)"
+              class="text-primary font-semibold hover:underline"
+            >
+              Know More →
+            </button>
+          </div>
+
+          <!-- Step 2 -->
+          <div
+            data-aos="fade-up"
+            data-aos-delay="100"
+            class="bg-white rounded-2xl p-8 step-card transition-all"
+          >
+            <div
+              class="w-14 h-14 mx-auto mb-6 rounded-full flex items-center justify-center text-white text-xl font-bold step-number"
+            >
+              02
+            </div>
+            <h4 class="text-xl font-semibold mb-4">Planning & Strategy</h4>
+            <button
+              onclick="openModal(2)"
+              class="text-primary font-semibold hover:underline"
+            >
+              Know More →
+            </button>
+          </div>
+
+          <!-- Step 3 -->
+          <div
+            data-aos="fade-up"
+            data-aos-delay="200"
+            class="bg-white rounded-2xl p-8 step-card transition-all"
+          >
+            <div
+              class="w-14 h-14 mx-auto mb-6 rounded-full flex items-center justify-center text-white text-xl font-bold step-number"
+            >
+              03
+            </div>
+            <h4 class="text-xl font-semibold mb-4">UI / UX Design</h4>
+            <button
+              onclick="openModal(3)"
+              class="text-primary font-semibold hover:underline"
+            >
+              Know More →
+            </button>
+          </div>
+
+          <!-- Step 4 -->
+          <div
+            data-aos="fade-up"
+            data-aos-delay="300"
+            class="bg-white rounded-2xl p-8 step-card transition-all"
+          >
+            <div
+              class="w-14 h-14 mx-auto mb-6 rounded-full flex items-center justify-center text-white text-xl font-bold step-number"
+            >
+              04
+            </div>
+            <h4 class="text-xl font-semibold mb-4">Development</h4>
+            <button
+              onclick="openModal(4)"
+              class="text-primary font-semibold hover:underline"
+            >
+              Know More →
+            </button>
+          </div>
+
+          <!-- Step 5 -->
+          <div
+            data-aos="fade-up"
+            data-aos-delay="400"
+            class="bg-white rounded-2xl p-8 step-card transition-all"
+          >
+            <div
+              class="w-14 h-14 mx-auto mb-6 rounded-full flex items-center justify-center text-white text-xl font-bold step-number"
+            >
+              05
+            </div>
+            <h4 class="text-xl font-semibold mb-4">Testing & QA</h4>
+            <button
+              onclick="openModal(5)"
+              class="text-primary font-semibold hover:underline"
+            >
+              Know More →
+            </button>
+          </div>
+
+          <!-- Step 6 -->
+          <div
+            data-aos="fade-up"
+            data-aos-delay="500"
+            class="bg-white rounded-2xl p-8 step-card transition-all"
+          >
+            <div
+              class="w-14 h-14 mx-auto mb-6 rounded-full flex items-center justify-center text-white text-xl font-bold step-number"
+            >
+              06
+            </div>
+            <h4 class="text-xl font-semibold mb-4">Launch & Support</h4>
+            <button
+              onclick="openModal(6)"
+              class="text-primary font-semibold hover:underline"
+            >
+              Know More →
+            </button>
+          </div>
+        </div>
+
+        <!-- ================= CTA BUTTON ================= -->
+        <div class="mt-20 flex justify-center" data-aos="fade-up">
+          <a
+            href="about-our-services.html"
+            class="inline-block bg-primary text-white px-12 py-4 rounded-full font-semibold transition-all duration-500 hover:bg-primaryDark hover:scale-110 hover:shadow-2xl"
+          >
+            Explore Our Services
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= MODAL ================= -->
+    <div
+      id="modal"
+      class="fixed inset-0 bg-black/60 hidden items-center justify-center z-50"
+    >
+      <div class="bg-white rounded-2xl max-w-lg w-full p-8 relative">
+        <button
+          onclick="closeModal()"
+          class="absolute top-4 right-4 text-gray-500 text-xl"
+        >
+          ✖
+        </button>
+
+        <h3 id="modalTitle" class="text-2xl font-bold mb-4 text-primary"></h3>
+        <p id="modalContent" class="text-gray-600 text-sm leading-relaxed"></p>
+      </div>
+    </div>
+
+    <section class="py-24">
+      <div class="max-w-4xl mx-auto px-6 text-center">
+        <!-- Heading -->
+        <div data-aos="fade-down">
+          <h2 class="text-4xl md:text-5xl font-bold mb-4">
+            Frequently Asked <span class="text-primary">Questions</span>
+          </h2>
+          <p class="max-w-2xl mx-auto text-gray-600 text-lg">
+            Find answers to common questions about our app & website development
+            services.
+          </p>
+        </div>
+
+        <!-- FAQ Cards -->
+        <div class="mt-16 space-y-4" data-aos="fade-up">
+          <!-- FAQ 1 -->
+          <div class="bg-white rounded-2xl shadow-md p-6 faq-card">
+            <button
+              class="w-full flex justify-between items-center font-semibold text-left text-gray-800"
+            >
+              What technologies do you use for mobile app development?
+              <span class="icon text-primary text-xl">⌄</span>
+            </button>
+            <div class="faq-content text-gray-600 text-sm mt-2">
+              We use Flutter, React Native, and native Android/iOS for
+              high-performance apps.
+            </div>
+          </div>
+
+          <!-- FAQ 2 -->
+          <div class="bg-white rounded-2xl shadow-md p-6 faq-card">
+            <button
+              class="w-full flex justify-between items-center font-semibold text-left text-gray-800"
+            >
+              How long does it take to develop a mobile app?
+              <span class="icon text-primary text-xl">⌄</span>
+            </button>
+            <div class="faq-content text-gray-600 text-sm mt-2">
+              Depending on complexity, app development usually takes 4-12 weeks.
+            </div>
+          </div>
+
+          <!-- FAQ 3 -->
+          <div class="bg-white rounded-2xl shadow-md p-6 faq-card">
+            <button
+              class="w-full flex justify-between items-center font-semibold text-left text-gray-800"
+            >
+              Can you develop custom websites for businesses?
+              <span class="icon text-primary text-xl">⌄</span>
+            </button>
+            <div class="faq-content text-gray-600 text-sm mt-2">
+              Yes, we design responsive, SEO-friendly, and scalable websites
+              tailored to your business.
+            </div>
+          </div>
+
+          <!-- FAQ 4 -->
+          <div class="bg-white rounded-2xl shadow-md p-6 faq-card">
+            <button
+              class="w-full flex justify-between items-center font-semibold text-left text-gray-800"
+            >
+              Do you provide maintenance and support after launch?
+              <span class="icon text-primary text-xl">⌄</span>
+            </button>
+            <div class="faq-content text-gray-600 text-sm mt-2">
+              Absolutely! We provide ongoing support, updates, and monitoring
+              for all projects.
+            </div>
+          </div>
+        </div>
+
+        <!-- CTA Buttons -->
+        <div class="mt-12 flex justify-center gap-6" data-aos="fade-up">
+          <a href="services.html" class="cta-btn"> Explore Our Services </a>
+          <a href="projects.html" class="cta-btn"> Explore Our Projects </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Background Blobs -->
+    <div class="blob blue"></div>
+    <div class="blob dark"></div>
+
+    <!-- ================= WHY CHOOSE US ================= -->
+    <section class="py-24 relative z-10">
+      <div class="max-w-7xl mx-auto px-6 text-center">
+        <!-- Heading -->
+        <div data-aos="fade-down">
+          <h1 class="text-4xl md:text-5xl font-bold mb-4">
+            Why <span class="text-primary">Choose Us</span>
+          </h1>
+          <p class="max-w-2xl mx-auto text-gray-600 text-lg">
+            We don’t just build software — we create scalable, secure, and
+            high-performance digital solutions that grow your business.
+          </p>
+        </div>
+
+        <!-- Cards -->
+        <div
+          class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 mt-16"
+        >
+          <!-- Card 1 -->
+          <div data-aos="zoom-in" class="bg-white rounded-2xl p-8 card-animate">
+            <div
+              class="w-16 h-16 mx-auto mb-6 rounded-full flex items-center justify-center bg-gradient-to-br from-primary to-primaryDark text-white text-3xl icon-animate"
+            >
+              👨‍💻
+            </div>
+            <h3 class="text-xl font-semibold mb-3">Experienced Team</h3>
+            <p class="text-gray-600 text-sm">
+              Professional developers & designers with proven expertise.
+            </p>
+          </div>
+          <!-- Card 2 -->
+          <div
+            data-aos="zoom-in"
+            data-aos-delay="100"
+            class="bg-white rounded-2xl p-8 card-animate"
+          >
+            <div
+              class="w-16 h-16 mx-auto mb-6 rounded-full flex items-center justify-center bg-gradient-to-br from-primary to-primaryDark text-white text-3xl icon-animate"
+            >
+              🚀
+            </div>
+            <h3 class="text-xl font-semibold mb-3">Fast Delivery</h3>
+            <p class="text-gray-600 text-sm">
+              Agile development ensures on-time delivery without compromising
+              quality.
+            </p>
+          </div>
+          <!-- Card 3 -->
+          <div
+            data-aos="zoom-in"
+            data-aos-delay="200"
+            class="bg-white rounded-2xl p-8 card-animate"
+          >
+            <div
+              class="w-16 h-16 mx-auto mb-6 rounded-full flex items-center justify-center bg-gradient-to-br from-primary to-primaryDark text-white text-3xl icon-animate"
+            >
+              🔒
+            </div>
+            <h3 class="text-xl font-semibold mb-3">Secure Solutions</h3>
+            <p class="text-gray-600 text-sm">
+              Security-first architecture with best practices.
+            </p>
+          </div>
+          <!-- Card 4 -->
+          <div
+            data-aos="zoom-in"
+            data-aos-delay="300"
+            class="bg-white rounded-2xl p-8 card-animate"
+          >
+            <div
+              class="w-16 h-16 mx-auto mb-6 rounded-full flex items-center justify-center bg-gradient-to-br from-primary to-primaryDark text-white text-3xl icon-animate"
+            >
+              💬
+            </div>
+            <h3 class="text-xl font-semibold mb-3">24/7 Support</h3>
+            <p class="text-gray-600 text-sm">
+              Continuous monitoring, updates, and dedicated support.
+            </p>
+          </div>
+        </div>
+
+        <!-- CTA Buttons -->
+        <div
+          class="mt-16 flex flex-col sm:flex-row gap-6 justify-center items-center"
+          data-aos="fade-up"
+        >
+          <a href="services.html" class="cta-btn">Explore Our Services</a>
+          <a href="projects.html" class="cta-btn">Explore Our Projects</a>
+          <a href="index.html#contact" class="cta-btn">Contact Us</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= CTA ================= -->
+    <section class="cta" data-aos="zoom-in-up">
+      <h3>Have a Project in Mind?</h3>
+      <p>
+        Let’s build a powerful website or mobile app that grows your business.
+      </p>
+      <br /><br />
+      <a
+        href="http://127.0.0.1:5500/Innorvia/Innorvia_Technology_profile/index.html#contact"
+        >Get Started with Innorvia</a
+      >
+    </section>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+      AOS.init({ duration: 1000, easing: "ease-in-out", once: true });
+
+      // Function to show detailed section
+      function showSection(id) {
+        // Hide all
+        document
+          .querySelectorAll(".service-detail")
+          .forEach((sec) => (sec.style.display = "none"));
+        // Show selected
+        document.getElementById(id).style.display = "block";
+        document.getElementById(id).scrollIntoView({ behavior: "smooth" });
+      }
+
+      // Scroll back to services
+      function scrollToServices() {
+        document
+          .getElementById("services")
+          .scrollIntoView({ behavior: "smooth" });
+        document
+          .querySelectorAll(".service-detail")
+          .forEach((sec) => (sec.style.display = "none"));
+      }
+    </script>
+
+    <!-- JS -->
+    <script>
+      const data = {
+        1: [
+          "Discovery & Requirements",
+          "We analyze your business goals, target audience, and features to build a strong project foundation.",
+        ],
+        2: [
+          "Planning & Strategy",
+          "We finalize the technology stack, timeline, milestones, and roadmap.",
+        ],
+        3: [
+          "UI / UX Design",
+          "We design user-friendly and visually appealing interfaces aligned with your brand.",
+        ],
+        4: [
+          "Development",
+          "Our developers build scalable, secure mobile apps and websites.",
+        ],
+        5: [
+          "Testing & QA",
+          "We perform rigorous testing to ensure quality, performance, and security.",
+        ],
+        6: [
+          "Launch & Support",
+          "We deploy your project and provide long-term maintenance & support.",
+        ],
+      };
+
+      function openModal(id) {
+        document.getElementById("modalTitle").innerText = data[id][0];
+        document.getElementById("modalContent").innerText = data[id][1];
+        document.getElementById("modal").classList.remove("hidden");
+        document.getElementById("modal").classList.add("flex");
+      }
+
+      function closeModal() {
+        document.getElementById("modal").classList.add("hidden");
+        document.getElementById("modal").classList.remove("flex");
+      }
+    </script>
+
+    <!-- AOS -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+      AOS.init({ duration: 1000, once: true });
+    </script>
+    <!-- Accordion JS -->
+    <script>
+      document.querySelectorAll(".faq-card button").forEach((btn) => {
+        btn.addEventListener("click", () => {
+          const card = btn.parentElement;
+          card.classList.toggle("open");
+        });
+      });
+    </script>
+
+    <!-- AOS -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+      AOS.init({ duration: 1000, once: true });
+    </script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+      AOS.init({ duration: 1200, easing: "ease-in-out", once: true });
+    </script>
+  </body>
+</html>
