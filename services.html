@@ -399,6 +399,329 @@
         box-shadow: 0 15px 35px rgba(13, 110, 253, 0.5);
       }
     </style>
+    <style>
+      @media (max-width: 991px) {
+        .navmenu {
+          position: absolute;
+          top: 100%;
+          right: 0;
+          background: #fff;
+          width: 100%;
+          display: none;
+          padding: 15px;
+        }
+        .navmenu.navmenu-active {
+          display: block;
+        }
+        .navmenu ul {
+          flex-direction: column;
+          gap: 15px;
+        }
+      }
+      /* === FIX MOBILE NAV WITHOUT TOUCHING OLD STYLE === */
+      @media (max-width: 991px) {
+        #navmenu {
+          position: absolute;
+          top: 70px;
+          right: 0;
+          width: 100%;
+          background: #fff;
+          z-index: 9999;
+        }
+
+        /* Hide list by default */
+        #navmenu ul {
+          display: none !important;
+          flex-direction: column;
+          gap: 15px;
+          padding: 20px 15px;
+        }
+
+        /* Show when toggled */
+        #navmenu.navmenu-active ul {
+          display: flex !important;
+        }
+
+        /* Keep list icon visible */
+        .mobile-nav-toggle {
+          display: block !important;
+          font-size: 28px !important;
+          color: #000 !important;
+          cursor: pointer;
+          z-index: 10000;
+        }
+      }
+      /* ===== FORCE SHOW MOBILE MENU ICON ===== */
+      .mobile-nav-toggle {
+        display: block !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+        position: relative !important;
+        z-index: 999999 !important;
+        font-size: 32px !important;
+        color: #000 !important;
+      }
+
+      /* Make sure nothing hides nav */
+      #navmenu {
+        z-index: 9999 !important;
+      }
+
+      /* Hide menu only on small screens */
+      @media (max-width: 991px) {
+        #navmenu ul {
+          display: none !important;
+        }
+        #navmenu.navmenu-active ul {
+          display: flex !important;
+          flex-direction: column;
+          gap: 15px;
+          padding: 20px 15px;
+          background: #fff;
+        }
+      }
+      /* ==== LAST OVERRIDE FIX — KEEP ALL ORIGINAL CSS ==== */
+      @media (max-width: 991px) {
+        /* Always show the toggle icon */
+        .mobile-nav-toggle {
+          display: block !important;
+        }
+
+        /* Navigation container must not hide itself */
+        #navmenu {
+          display: block !important;
+          padding: 0 !important;
+        }
+
+        /* Hide menu items only, not wrapper */
+        .navmenu ul {
+          display: none !important;
+          flex-direction: column !important;
+          gap: 12px !important;
+          background: #fff !important;
+          padding: 20px 15px !important;
+          width: 100% !important;
+        }
+
+        /* Show when toggled */
+        #navmenu.navmenu-active ul {
+          display: flex !important;
+        }
+
+        /* Prevent blank space on top */
+        #navmenu {
+          top: 65px !important;
+        }
+      } /* === FULL SCREEN MOBILE MENU LIKE YOUR EXAMPLE === */
+      @media (max-width: 991px) {
+        /* Cover full screen */
+        #navmenu {
+          position: fixed !important;
+          top: 0 !important;
+          left: 0;
+          width: 100% !important;
+          height: 100vh !important;
+          background: rgba(0, 0, 0, 0.6) !important;
+          display: none;
+          padding-top: 70px !important; /* push down for logo space */
+        }
+
+        /* Actual white menu container */
+        #navmenu ul {
+          background: #fff;
+          margin: 0 auto;
+          width: 90%;
+          border-radius: 12px;
+          padding: 30px 20px !important;
+          display: none !important;
+          flex-direction: column !important;
+          gap: 18px !important;
+        }
+
+        /* Show overlay + menu */
+        #navmenu.navmenu-active {
+          display: block !important;
+        }
+        #navmenu.navmenu-active ul {
+          display: flex !important;
+        }
+
+        /* Fix icon */
+        .mobile-nav-toggle {
+          position: relative !important;
+          z-index: 999999 !important;
+          font-size: 32px !important;
+          color: #fff !important;
+        }
+
+        /* Hide contact button inside menu */
+        .btn-getstarted {
+          display: none !important;
+        }
+      }
+      /* === REMOVE GREY BACKGROUND WHEN MENU CLOSED === */
+      @media (max-width: 991px) {
+        /* Hide overlay completely when menu inactive */
+        #navmenu {
+          display: none !important;
+          background: transparent !important;
+          height: auto !important;
+        }
+
+        /* Show overlay only when active */
+        #navmenu.navmenu-active {
+          display: block !important;
+          position: fixed !important;
+          top: 0 !important;
+          left: 0 !important;
+          width: 100% !important;
+          height: 100vh !important;
+          background: rgba(0, 0, 0, 0.6) !important;
+          padding-top: 65px !important;
+        }
+      }
+      /* === FINAL WORKING FIX === */
+      @media (max-width: 991px) {
+        /* Keep icon always visible */
+        .mobile-nav-toggle {
+          display: block !important;
+          visibility: visible !important;
+          opacity: 1 !important;
+          position: relative !important;
+          z-index: 100000 !important;
+        }
+
+        /* Hide menu overlay when closed (not the whole navmenu div) */
+        #navmenu:not(.navmenu-active) > ul {
+          display: none !important;
+        }
+
+        /* Show overlay and menu when active */
+        #navmenu.navmenu-active {
+          position: fixed !important;
+          inset: 0 !important;
+          width: 100% !important;
+          height: 100vh !important;
+          background: rgba(0, 0, 0, 0.6) !important;
+          padding-top: 70px !important;
+        }
+
+        /* White menu box */
+        #navmenu.navmenu-active ul {
+          display: flex !important;
+          flex-direction: column !important;
+          gap: 18px !important;
+          width: 90% !important;
+          margin: 0 auto;
+          background: #fff;
+          padding: 30px 20px;
+          border-radius: 12px;
+        }
+
+        /* Hide contact button on mobile */
+        .btn-getstarted {
+          display: none !important;
+        }
+      }
+      /* ===== MAKE ICON VISIBLE NO MATTER WHAT ===== */
+      .mobile-nav-toggle {
+        display: block !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+        z-index: 999999 !important;
+        position: relative !important;
+      }
+      /* Some styles are hiding the whole nav div — undo that */
+      @media (max-width: 991px) {
+        #navmenu {
+          display: block !important;
+          height: auto !important;
+          background: transparent !important;
+        }
+      }
+      /* Make mobile nav icon visible on white header */
+      .mobile-nav-toggle {
+        color: #000 !important;
+      }
+      @media (max-width: 991px) {
+        .header-container {
+          display: flex !important;
+          align-items: center !important;
+        }
+        .mobile-nav-toggle {
+          margin-left: auto !important;
+          margin-right: 0 !important;
+          order: 99 !important; /* push icon to the right */
+        }
+        .btn-getstarted {
+          display: none !important; /* avoid pushing the icon */
+        }
+      }
+      @media (max-width: 991px) {
+        .btn-getstarted {
+          display: block !important;
+          margin-left: 15px !important;
+        }
+      }
+      @media (max-width: 991px) {
+        /* Put button + icon at right side together */
+        .header-container {
+          display: flex !important;
+          align-items: center !important;
+        }
+
+        /* Make nav go out of the way (not affect spacing) */
+        #navmenu {
+          order: 1;
+        }
+
+        /* Contact button */
+        .btn-getstarted {
+          display: block !important;
+          order: 2 !important;
+          margin-left: auto !important;
+          margin-right: 10px !important;
+        }
+
+        /* Hamburger icon — always last item */
+        .mobile-nav-toggle {
+          order: 3 !important;
+          margin-left: 0 !important;
+          margin-right: 10px !important;
+        }
+      }
+      /* --- Desktop: hide hamburger icon --- */
+      @media (min-width: 992px) {
+        .mobile-nav-toggle {
+          display: none !important;
+        }
+      }
+
+      /* --- Mobile: show button + hamburger on the right --- */
+      @media (max-width: 991px) {
+        .header-container {
+          display: flex !important;
+          align-items: center !important;
+        }
+
+        #navmenu {
+          order: 1;
+        }
+
+        .btn-getstarted {
+          display: block !important;
+          order: 2 !important;
+          margin-left: auto !important;
+          margin-right: 10px !important;
+        }
+
+        .mobile-nav-toggle {
+          order: 3 !important;
+          display: block !important;
+          margin-right: 10px !important;
+        }
+      }
+    </style>
   </head>
   <body>
     <!-- ================= NAVBAR (SAME AS HOME) ================= -->
@@ -416,18 +739,20 @@
         <nav id="navmenu" class="navmenu">
           <ul>
             <li><a href="index.html#hero">Home</a></li>
-
             <li><a href="services.html" class="active">Services</a></li>
             <li><a href="projects.html">Projects</a></li>
             <li><a href="about.html">About</a></li>
             <li><a href="index.html#team">Team</a></li>
           </ul>
-          <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
         </nav>
+
+        <!-- KEEP ONLY THIS ONE -->
+        <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
 
         <a class="btn-getstarted" href="index.html#contact">Contact</a>
       </div>
     </header>
+
     <br /><br /><br />
     <!-- ================= SERVICES GRID ================= -->
     <section id="services" class="services section light-background">
@@ -611,171 +936,172 @@
 
     <!-- ================= DETAILED SERVICE SECTIONS ================= -->
     <div class="container">
-      <section id="service-mobile" class="service-detail" data-aos="fade-up">
-        <h3>Mobile App Development</h3>
-        <p>
-          We create high-performance Android and cross-platform mobile
-          applications, optimized for engagement and business growth.
-        </p>
-        <ul>
-          <li>Android & iOS Apps</li>
-          <li>Flutter / React Native Cross-Platform Apps</li>
-          <li>App UI/UX Design</li>
-          <li>Maintenance & Updates</li>
-        </ul>
-        <a class="read-more" onclick="scrollToServices()"
-          >Back to Services <i class="bi bi-arrow-up"></i
-        ></a>
-      </section>
+      <!-- ================= DETAILED SERVICE SECTIONS ================= -->
+      <div class="container">
+        <section id="service-mobile" class="service-detail" data-aos="fade-up">
+          <h3>Mobile App Development</h3>
+          <p>
+            We build powerful, fast mobile applications that help startups,
+            shops, and enterprises manage customers, boost efficiency, and grow
+            online. Our apps deliver smooth UI, offline support, secure
+            databases, and scalable backend connectivity.
+          </p>
+          <ul>
+            <li>Native Android & iOS App Development</li>
+            <li>Flutter / React Native Cross-Platform Development</li>
+            <li>Custom UI/UX Based on Your Branding</li>
+            <li>Real-Time Database Apps (Firebase, Supabase, MongoDB)</li>
+            <li>Push Notifications, GPS, Chat, and Payment Features</li>
+            <li>App Store Deployment & Continuous Upgrades</li>
+          </ul>
+          <a class="read-more" onclick="scrollToServices()"
+            >Back to Services <i class="bi bi-arrow-up"></i
+          ></a>
+        </section>
 
-      <section id="service-website" class="service-detail" data-aos="fade-up">
-        <h3>Website Development</h3>
-        <p>
-          Fast, SEO-friendly, and conversion-focused websites tailored to your
-          business needs.
-        </p>
-        <ul>
-          <li>Responsive Websites</li>
-          <li>CMS (WordPress, Shopify)</li>
-          <li>E-commerce Development</li>
-          <li>SEO Optimization</li>
-        </ul>
-        <a class="read-more" onclick="scrollToServices()"
-          >Back to Services <i class="bi bi-arrow-up"></i
-        ></a>
-      </section>
+        <section id="service-website" class="service-detail" data-aos="fade-up">
+          <h3>Website Development</h3>
+          <p>
+            From business websites to ecommerce shops, we develop SEO-optimized,
+            responsive and secure web experiences that convert visitors into
+            customers.
+          </p>
+          <ul>
+            <li>Business, Portfolio & Startup Websites</li>
+            <li>CMS Development (WordPress, Webflow, Shopify)</li>
+            <li>E-commerce Website Customization & Integration</li>
+            <li>Landing Pages Optimized for Conversions</li>
+            <li>Website Speed & SEO Optimization</li>
+            <li>Hosting, SSL, Domain Setup & Ongoing Support</li>
+          </ul>
+          <a class="read-more" onclick="scrollToServices()"
+            >Back to Services <i class="bi bi-arrow-up"></i
+          ></a>
+        </section>
 
-      <section id="service-desktop" class="service-detail" data-aos="fade-up">
-        <h3>Desktop Application Development</h3>
-        <p>
-          Secure, reliable, and scalable desktop software solutions for business
-          efficiency.
-        </p>
-        <ul>
-          <li>Windows / Mac Applications</li>
-          <li>Custom Business Software</li>
-          <li>Automation Tools</li>
-          <li>Integration with APIs</li>
-        </ul>
-        <a class="read-more" onclick="scrollToServices()"
-          >Back to Services <i class="bi bi-arrow-up"></i
-        ></a>
-      </section>
+        <section id="service-desktop" class="service-detail" data-aos="fade-up">
+          <h3>Desktop Application Development</h3>
+          <p>
+            We build custom desktop software for organizations that require
+            secure, offline-first, high-speed solutions with user-friendly UI
+            and reporting.
+          </p>
+          <ul>
+            <li>Custom Windows / Mac Software Development</li>
+            <li>Billing, POS, Inventory & Accounting Tools</li>
+            <li>CRM / HRM / ERP Software for Enterprise</li>
+            <li>Barcode, QR Code, Printing & Automation Support</li>
+            <li>Role-Based Permission & Security Controls</li>
+            <li>Cloud Sync + Multi-Branch Data Access Options</li>
+          </ul>
+          <a class="read-more" onclick="scrollToServices()"
+            >Back to Services <i class="bi bi-arrow-up"></i
+          ></a>
+        </section>
 
-      <section id="service-digital" class="service-detail" data-aos="fade-up">
-        <h3>Digital Marketing</h3>
-        <p>
-          Grow your online presence with SEO, paid ads, and growth-focused
-          strategies.
-        </p>
-        <ul>
-          <li>SEO Optimization</li>
-          <li>Social Media Ads</li>
-          <li>Content Marketing</li>
-          <li>Analytics & Reporting</li>
-        </ul>
-        <a class="read-more" onclick="scrollToServices()"
-          >Back to Services <i class="bi bi-arrow-up"></i
-        ></a>
-      </section>
+        <section id="service-digital" class="service-detail" data-aos="fade-up">
+          <h3>Digital Marketing</h3>
+          <p>
+            We help brands grow online using proven digital strategies — from
+            SEO and Google rankings to viral social content and lead generation
+            campaigns.
+          </p>
+          <ul>
+            <li>Search Engine Optimization (Local & National)</li>
+            <li>Social Media Management for FB, IG, LinkedIn</li>
+            <li>Paid Ads & Lead Generation Campaigns</li>
+            <li>Content Creation & Post Designing</li>
+            <li>Reputation Management & Brand Building</li>
+            <li>Analytics Reporting & Conversion Tracking</li>
+          </ul>
+          <a class="read-more" onclick="scrollToServices()"
+            >Back to Services <i class="bi bi-arrow-up"></i
+          ></a>
+        </section>
 
-      <section id="service-custom" class="service-detail" data-aos="fade-up">
-        <h3>Custom Software Solutions</h3>
-        <p>
-          Tailor-made software to automate, scale, and streamline your business
-          operations.
-        </p>
-        <ul>
-          <li>Enterprise Solutions</li>
-          <li>CRM & ERP Software</li>
-          <li>Process Automation</li>
-          <li>Integration Services</li>
-        </ul>
-        <a class="read-more" onclick="scrollToServices()"
-          >Back to Services <i class="bi bi-arrow-up"></i
-        ></a>
-      </section>
+        <section id="service-custom" class="service-detail" data-aos="fade-up">
+          <h3>Custom Software Solutions</h3>
+          <p>
+            We develop tailor-made systems to automate work, eliminate
+            paperwork, improve accuracy, and help business teams operate smarter
+            and faster.
+          </p>
+          <ul>
+            <li>ERP & CRM Development for Business Operations</li>
+            <li>Custom Admin & Reporting Dashboards</li>
+            <li>HR, Payroll, Attendance & MIS Systems</li>
+            <li>Process Automation & Workflow Engine</li>
+            <li>Secure Role-Based Access Management</li>
+            <li>API-Ready Systems for Future Integrations</li>
+          </ul>
+          <a class="read-more" onclick="scrollToServices()"
+            >Back to Services <i class="bi bi-arrow-up"></i
+          ></a>
+        </section>
 
-      <section id="service-ecommerce" class="service-detail" data-aos="fade-up">
-        <h3>E-commerce & Billing</h3>
-        <p>Seamless payment, invoice, and order management systems.</p>
-        <ul>
-          <li>Online Store Development</li>
-          <li>Payment Gateway Integration</li>
-          <li>Inventory & Billing</li>
-          <li>Customer Management</li>
-        </ul>
-        <a class="read-more" onclick="scrollToServices()"
-          >Back to Services <i class="bi bi-arrow-up"></i
-        ></a>
-      </section>
+        <section
+          id="service-ecommerce"
+          class="service-detail"
+          data-aos="fade-up"
+        >
+          <h3>E-commerce & Billing</h3>
+          <p>
+            Whether you need a full ecommerce platform or store billing
+            software, we create reliable systems to manage catalogs, customers,
+            orders and payments.
+          </p>
+          <ul>
+            <li>Online Store Development with Payment Gateways</li>
+            <li>GST Billing, Barcode Scanning & Stock Tracking</li>
+            <li>Customer Accounts, Discounts & Loyalty Points</li>
+            <li>Order/Delivery Management & SMS Alerts</li>
+            <li>Admin Panel with Analytics & Sales Reports</li>
+            <li>POS Integration for Offline + Online Sales</li>
+          </ul>
+          <a class="read-more" onclick="scrollToServices()"
+            >Back to Services <i class="bi bi-arrow-up"></i
+          ></a>
+        </section>
 
-      <section id="service-uiux" class="service-detail" data-aos="fade-up">
-        <h3>UI / UX Design</h3>
-        <p>User-focused design to increase engagement and retention.</p>
-        <ul>
-          <li>Wireframing & Prototyping</li>
-          <li>UI Design Systems</li>
-          <li>Mobile & Web UX Design</li>
-          <li>User Testing & Feedback</li>
-        </ul>
-        <a class="read-more" onclick="scrollToServices()"
-          >Back to Services <i class="bi bi-arrow-up"></i
-        ></a>
-      </section>
+        <section id="service-uiux" class="service-detail" data-aos="fade-up">
+          <h3>UI / UX Design</h3>
+          <p>
+            We create stunning visuals and easy-to-use digital interfaces that
+            keep users engaged and delighted — from onboarding to checkout.
+          </p>
+          <ul>
+            <li>Wireframing & Prototype Flow Mapping</li>
+            <li>Modern UI Design for Mobile & Web</li>
+            <li>Branding, Logo, Color Palette & Typography</li>
+            <li>Interactive Animations & Motion Effects</li>
+            <li>User Testing & Refinement Based on Feedback</li>
+            <li>Design Systems & Component Libraries</li>
+          </ul>
+          <a class="read-more" onclick="scrollToServices()"
+            >Back to Services <i class="bi bi-arrow-up"></i
+          ></a>
+        </section>
 
-      <section id="service-backend" class="service-detail" data-aos="fade-up">
-        <h3>API & Backend Development</h3>
-        <p>
-          Secure backend systems and API integrations for seamless performance.
-        </p>
-        <ul>
-          <li>Database Management</li>
-          <li>REST / GraphQL APIs</li>
-          <li>Authentication & Security</li>
-          <li>Cloud Integration</li>
-        </ul>
-        <a class="read-more" onclick="scrollToServices()"
-          >Back to Services <i class="bi bi-arrow-up"></i
-        ></a>
-      </section>
-
-      <section
-        id="service-maintenance"
-        class="service-detail"
-        data-aos="fade-up"
-      >
-        <h3>App Maintenance & Support</h3>
-        <p>
-          Ongoing updates, monitoring, and long-term support for all your apps.
-        </p>
-        <ul>
-          <li>Bug Fixes & Updates</li>
-          <li>Performance Monitoring</li>
-          <li>Feature Enhancements</li>
-          <li>Technical Support</li>
-        </ul>
-        <a class="read-more" onclick="scrollToServices()"
-          >Back to Services <i class="bi bi-arrow-up"></i
-        ></a>
-      </section>
-
-      <section id="service-qa" class="service-detail" data-aos="fade-up">
-        <h3>Quality Assurance & App Testing</h3>
-        <p>
-          Manual and automated testing ensures bug-free, secure, and
-          high-performance apps and websites.
-        </p>
-        <ul>
-          <li>Functional Testing</li>
-          <li>Performance Testing</li>
-          <li>Security Testing</li>
-          <li>Automation Testing</li>
-        </ul>
-        <a class="read-more" onclick="scrollToServices()"
-          >Back to Services <i class="bi bi-arrow-up"></i
-        ></a>
-      </section>
+        <section id="service-backend" class="service-detail" data-aos="fade-up">
+          <h3>API & Backend Development</h3>
+          <p>
+            Our backend systems power your apps with speed, security and
+            scalability, ensuring smooth performance even under thousands of
+            users.
+          </p>
+          <ul>
+            <li>REST & GraphQL API Development</li>
+            <li>Database Design – MongoDB, PostgreSQL, MySQL</li>
+            <li>Authentication, Role-Based Access & Permissions</li>
+            <li>Real-Time Data, Analytics & Logging</li>
+            <li>Third-Party API Integrations (SMS, Maps, Payment)</li>
+            <li>Cloud Deployments: AWS, Azure, DigitalOcean</li>
+          </ul>
+          <a class="read-more" onclick="scrollToServices()"
+            >Back to Services <i class="bi bi-arrow-up"></i
+          ></a>
+        </section>
+      </div>
     </div>
 
     <!-- ================= HOW WE WORK ================= -->
@@ -1248,5 +1574,16 @@
     <script>
       AOS.init({ duration: 1200, easing: "ease-in-out", once: true });
     </script>
+    <script>
+      const navToggle = document.querySelector(".mobile-nav-toggle");
+      const navMenu = document.getElementById("navmenu");
+
+      navToggle.addEventListener("click", () => {
+        navMenu.classList.toggle("navmenu-active");
+        navToggle.classList.toggle("bi-x");
+      });
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
   </body>
 </html>
