@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -159,7 +159,9 @@
       .project-card {
         background: #ffffff;
         border-radius: 16px;
-        transition: transform 0.35s ease, box-shadow 0.35s ease;
+        transition:
+          transform 0.35s ease,
+          box-shadow 0.35s ease;
         box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
       }
 
@@ -465,7 +467,11 @@
                   >
                     View Details →
                   </button>
-                  <a href="" target="_blank" class="btn btn-primary btn-sm">
+                  <a
+                    href="http://sahabagrotraders.com/"
+                    target="_blank"
+                    class="btn btn-primary btn-sm"
+                  >
                     Visit Site 🌐
                   </a>
                 </div>
@@ -502,9 +508,9 @@
                   >
                     View Details →
                   </button>
-                  <a href="" target="_blank" class="btn btn-primary btn-sm">
+                  <!-- <a href="" target="_blank" class="btn btn-primary btn-sm">
                     Visit Site 🌐
-                  </a>
+                  </a> -->
                 </div>
               </div>
             </div>
@@ -535,7 +541,7 @@
                     View Details →
                   </button>
                   <a
-                    href="https://duahub.com"
+                    href="https://atozcollection.in/"
                     target="_blank"
                     class="btn btn-primary btn-sm"
                   >
@@ -571,13 +577,13 @@
                   >
                     View Details →
                   </button>
-                  <a
+                  <!-- <a
                     href="https://duahub.com"
                     target="_blank"
                     class="btn btn-primary btn-sm"
                   >
                     Visit Site 🌐
-                  </a>
+                  </a> -->
                 </div>
               </div>
             </div>
@@ -613,7 +619,7 @@
                     View Details →
                   </button>
                   <a
-                    href="https://duahub.com"
+                    href="https://dua-hub.com/"
                     target="_blank"
                     class="btn btn-primary btn-sm"
                   >
@@ -669,7 +675,7 @@
               />
 
               <div class="card-body d-flex flex-column">
-                <h5 class="card-title">📈 Algo 711</h5>
+                <h5 class="card-title">📈 Algo 7111</h5>
 
                 <p class="text-primary fw-semibold mb-2">
                   Trading App Development
@@ -691,9 +697,9 @@
                   </button>
 
                   <!-- optional -->
-                  <a href="#" target="_blank" class="btn btn-primary btn-sm">
+                  <!-- <a href="#" target="_blank" class="btn btn-primary btn-sm">
                     Visit Site 🌐
-                  </a>
+                  </a> -->
                 </div>
               </div>
             </div>
@@ -733,9 +739,6 @@
                   </button>
 
                   <!-- optional -->
-                  <a href="#" target="_blank" class="btn btn-primary btn-sm">
-                    Visit Site 🌐
-                  </a>
                 </div>
               </div>
             </div>
@@ -818,9 +821,6 @@
                   </button>
 
                   <!-- optional -->
-                  <a href="#" target="_blank" class="btn btn-primary btn-sm">
-                    Download App 💻
-                  </a>
                 </div>
               </div>
             </div>
@@ -1676,7 +1676,7 @@
               if (entry.isIntersecting) entry.target.classList.add("active");
             });
           },
-          { threshold: 0.15 }
+          { threshold: 0.15 },
         );
 
         reveals.forEach((el) => observer.observe(el));
@@ -1711,14 +1711,14 @@
             }
           });
         },
-        { threshold: 0.2 }
+        { threshold: 0.2 },
       );
 
       reveals.forEach((el) => observer.observe(el));
     </script>
     <script>
       const animatedItems = document.querySelectorAll(
-        ".reveal-up, .reveal-left, .reveal-right, .draw-line"
+        ".reveal-up, .reveal-left, .reveal-right, .draw-line",
       );
 
       const observe = new IntersectionObserver(
@@ -1735,7 +1735,7 @@
         },
         {
           threshold: 0.25,
-        }
+        },
       );
 
       animatedItems.forEach((el) => observe.observe(el));

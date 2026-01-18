@@ -50,6 +50,56 @@
   * License: https://bootstrapmade.com/license/
   ======================================================== -->
   </head>
+  <style>
+    .service-card {
+  background: #ffffff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+  height: 100%;
+}
+
+.service-card .icon {
+  font-size: 40px;
+  color: #0d6efd;
+  margin-right: 20px;
+}
+
+.service-card h3 {
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.more-content {
+  display: none;
+  margin-top: 10px;
+  color: #555;
+}
+
+.more-content p {
+  margin: 4px 0;
+}
+
+.read-more {
+  display: inline-block;
+  margin-top: 10px;
+  color: #0d6efd;
+  font-weight: 600;
+  cursor: pointer;
+  text-decoration: none;
+}
+.read-more i {
+  margin-left: 6px;
+  transition: transform 0.3s ease;
+  font-size: 14px;
+}
+
+/* Rotate arrow when open */
+.read-more.active i {
+  transform: rotate(180deg);
+}
+
+  </style>
 
   <body class="index-page">
     <header id="header" class="header d-flex align-items-center fixed-top">
@@ -113,13 +163,13 @@
                   <a href="#about" class="btn btn-primary me-0 me-sm-2 mx-1"
                     >Get Started</a
                   >
-                  <a
+                  <!-- <a
                     href="https://www.youtube.com/watch?v=Y7f98aduVJ8"
                     class="btn btn-link mt-2 mt-sm-0 glightbox"
                   >
                     <i class="bi bi-play-circle me-1"></i>
                     Play Video
-                  </a>
+                  </a> -->
                 </div>
               </div>
             </div>
@@ -322,7 +372,7 @@
                       <i class="bi bi-telephone-fill"></i>
                       <div>
                         <p class="contact-label">Email Us </p>
-                        <p class="contact-number">innorviatechnology@gmail.com</p>
+                        <p class="contact-number">contact@innorviatechnology.com</p>
                       </div>
                     </div>
                   </div>
@@ -364,155 +414,154 @@
 
 
 
+<section id="services" class="services section light-background">
+  <div class="container section-title">
+    <h3>Our Services</h3>
+    <p>
+      We build fast, responsive, and SEO-friendly websites using modern
+      frameworks tailored to your business needs.
+    </p>
+  </div>
 
+  <div class="container">
+    <div class="row g-4">
 
-      <!-- Services Section -->
-      <section id="services" class="services section light-background">
-        <!-- Section Title -->
-        <div class="container section-title" data-aos="fade-up">
-          <h3>Our Services</h3>
-          <p>
-            We build fast, responsive, and SEO-friendly websites using modern
-            frameworks tailored to your business needs.
-          </p>
-        </div>
-        <!-- End Section Title -->
-
-        <div class="container" data-aos="fade-up" data-aos-delay="100">
-          <div class="row g-4">
-            <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
-              <div class="service-card d-flex">
-                <div class="icon flex-shrink-0">
-                   <i class="fa-solid fa-mobile"></i>
-                  
-                </div>
-                <div>
-                  <h3>Mobile App Development</h3>
-                  <p>
-                    High-performance Android and cross-platform mobile
-                    applications designed for scalability and user engagement.
-                  </p>
-
-                  <a href="#projects" class="read-more"
-                    >Read More <i class="bi bi-arrow-right"></i
-                  ></a>
-                </div>
-              </div>
+      <!-- 1. Mobile App Development -->
+      <div class="col-lg-6">
+        <div class="service-card d-flex">
+          <div class="icon"><i class="fa-solid fa-mobile"></i></div>
+          <div class="content">
+            <h3>Mobile App Development</h3>
+            <p>High-performance Android and cross-platform mobile applications.</p>
+            <div class="more-content">
+              <p>Android & iOS application development</p>
+              <p>Flutter & React Native apps</p>
+              <p>Secure API & backend integration</p>
+              <p>Push notifications & real-time sync</p>
+              <p>Performance optimization</p>
+              <p>Play Store & App Store deployment</p>
             </div>
-            <!-- End Service Card -->
-              <div class="col-lg-6" data-aos="fade-up" data-aos-delay="400">
-              <div class="service-card d-flex">
-                <div class="icon flex-shrink-0">
-                  <i class="bi bi-clipboard-data"></i>
-                </div>
-                <div>
-                 <h3><h3>Website Development Company</h3>
-</h3>
-                  <p>
-                    Custom websites designed to look great, work smoothly,
-                     and help your business grow online.
-                  </p>
-
-                  <a href="#projects" class="read-more"
-                    >Read More <i class="bi bi-arrow-right"></i
-                  ></a>
-                </div>
-              </div>
-            </div>
-            <!-- service 3 -->
-             
-
-         
-            <!-- End Service Card -->
-
-            <div class="col-lg-6" data-aos="fade-up" data-aos-delay="300">
-              <div class="service-card d-flex">
-                <div class="icon flex-shrink-0">
-                  <i class="bi bi-easel"></i>
-                </div>
-                <div>
-                  <h3>Desktop Application Development</h3>
-                  <p>
-                    Clean, modern, and user-focused designs that deliver
-                    exceptional digital experiences.
-                  </p>    
-
-                  <a href="#projects" class="read-more"
-                    >Read More <i class="bi bi-arrow-right"></i
-                  ></a>
-                </div>
-              </div>
-            </div>
-            <!-- End Service Card -->
-               <div class="col-lg-6" data-aos="fade-up" data-aos-delay="200">
-              <div class="service-card d-flex">
-                <div class="icon flex-shrink-0">
-                  <i class="bi bi-activity"></i>
-                </div>
-                <div>
-                 <h3>Digital Marketing</h3>
-                  <p>
-                    Smart marketing solutions to grow your brand, reach 
-                    the right audience, and drive online engagement.
-                  </p>
-
-
-                  <a href="#projects" class="read-more"
-                    >Read More <i class="bi bi-arrow-right"></i
-                  ></a>
-                </div>
-              </div>
-            </div>
-<!-- service 5 -->
-    <div class="col-lg-6" data-aos="fade-up" data-aos-delay="200">
-              <div class="service-card d-flex">
-                <div class="icon flex-shrink-0">
-                  <i class="bi bi-activity"></i>
-                </div>
-                <div>
-                  <h3>Custom Software Solutions</h3>
-                  <p>
-                    Tailor-made software solutions that automate operations,
-                    improve productivity, and support business growth.
-                  </p>
-
-                  <a href="#projects" class="read-more"
-                    >Read More <i class="bi bi-arrow-right"></i
-                  ></a>
-                </div>
-              </div>
-            </div>
-           
-            <div class="col-lg-6" data-aos="fade-up" data-aos-delay="200">
-              <div class="service-card d-flex">
-                <div class="icon flex-shrink-0">
-                  <i class="bi bi-activity"></i>
-                </div>
-                <div>
-                  <h3>E-commerce & Billing  </h3>
-                  <p>
-                    Streamlined billing and e-commerce systems designed to manage orders, invoices, payments, and 
-                    customer data efficiently while ensuring scalability and security
-                  </p>
-
-                  <a href="#projects" class="read-more"
-                    >Read More <i class="bi bi-arrow-right"></i
-                  ></a>
-                </div>
-              </div>
-            </div>
-            <!-- End Service Card -->
-           
+                       <a class="read-more">
+  Read More <i class="bi bi-arrow-down"></i>
+</a>
           </div>
         </div>
-      </section>
+      </div>
 
+      <!-- 2. Website Development -->
+      <div class="col-lg-6">
+        <div class="service-card d-flex">
+          <div class="icon"><i class="bi bi-clipboard-data"></i></div>
+          <div class="content">
+            <h3>Website Development Company</h3>
+            <p>Custom websites designed to grow your business online.</p>
+            <div class="more-content">
+              <p>Responsive & mobile-first design</p>
+              <p>SEO optimized structure</p>
+              <p>Fast loading performance</p>
+              <p>Modern UI/UX design</p>
+              <p>Secure hosting setup</p>
+              <p>Website maintenance & support</p>
+            </div>
+                        <a class="read-more">
+  Read More <i class="bi bi-arrow-down"></i>
+</a>
+          </div>
+        </div>
+      </div>
 
+      <!-- 3. Desktop Application Development -->
+      <div class="col-lg-6">
+        <div class="service-card d-flex">
+          <div class="icon"><i class="bi bi-easel"></i></div>
+          <div class="content">
+            <h3>Desktop Application Development</h3>
+            <p>Powerful desktop solutions built for performance and stability.</p>
+            <div class="more-content">
+              <p>Windows-based desktop applications</p>
+              <p>python,flask,Java, .NET & Electron apps</p>
+              <p>Database-driven systems</p>
+              <p>Offline & online support</p>
+              <p>User-friendly interfaces</p>
+              <p>Ongoing upgrades & maintenance</p>
+            </div>
+                        <a class="read-more">
+  Read More <i class="bi bi-arrow-down"></i>
+</a>
+          </div>
+        </div>
+      </div>
 
+      <!-- 4. Digital Marketing -->
+      <div class="col-lg-6">
+        <div class="service-card d-flex">
+          <div class="icon"><i class="bi bi-activity"></i></div>
+          <div class="content">
+            <h3>Digital Marketing</h3>
+            <p>Smart strategies to increase reach and online engagement.</p>
+            <div class="more-content">
+              <p>Search Engine Optimization (SEO)</p>
+              <p>Social media marketing</p>
+              <p>Google Ads & paid campaigns</p>
+              <p>Content marketing</p>
+              <p>Brand visibility growth</p>
+              <p>Analytics & performance reports</p>
+            </div>
+                        <a class="read-more">
+  Read More <i class="bi bi-arrow-down"></i>
+</a>
+          </div>
+        </div>
+      </div>
 
+      <!-- 5. Custom Software Solutions -->
+      <div class="col-lg-6">
+        <div class="service-card d-flex">
+          <div class="icon"><i class="bi bi-gear"></i></div>
+          <div class="content">
+            <h3>Custom Software Solutions</h3>
+            <p>Tailor-made software to automate business operations.</p>
+            <div class="more-content">
+              <p>Business process automation</p>
+              <p>Custom ERP & CRM systems</p>
+              <p>Role-based access control</p>
+              <p>Scalable cloud architecture</p>
+              <p>Secure data handling</p>
+              <p>Long-term technical support</p>
+            </div>
+                        <a class="read-more">
+  Read More <i class="bi bi-arrow-down"></i>
+</a>
+          </div>
+        </div>
+      </div>
 
+      <!-- 6. E-commerce & Billing -->
+      <div class="col-lg-6">
+        <div class="service-card d-flex">
+          <div class="icon"><i class="bi bi-cart"></i></div>
+          <div class="content">
+            <h3>E-commerce & Billing</h3>
+            <p>Complete billing and e-commerce management systems.</p>
+            <div class="more-content">
+              <p>Online store development</p>
+              <p>Secure payment gateway integration</p>
+              <p>Invoice & billing automation</p>
+              <p>Order & inventory management</p>
+              <p>GST & tax compliance</p>
+              <p>Scalable & secure systems</p>
+            </div>
+            <a class="read-more">
+  Read More <i class="bi bi-arrow-down"></i>
+</a>
 
+          </div>
+        </div>
+      </div>
 
+    </div>
+  </div>
+</section>
 
 
 
@@ -2030,6 +2079,26 @@ User-friendly design with fast performance, smooth navigation, and professional 
     <!-- Main JS File -->
     <script src="assets/js/main.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+    document.addEventListener("DOMContentLoaded", () => {
+  document.querySelectorAll(".read-more").forEach(button => {
+    button.addEventListener("click", () => {
+      const content = button.previousElementSibling;
+
+      if (content.style.display === "block") {
+        content.style.display = "none";
+        button.classList.remove("active");
+        button.innerHTML = 'Read More <i class="bi bi-arrow-down"></i>';
+      } else {
+        content.style.display = "block";
+        button.classList.add("active");
+        button.innerHTML = 'Read Less <i class="bi bi-arrow-up"></i>';
+      }
+    });
+  });
+});
+
+    </script>
 
   </body>
 </html>
